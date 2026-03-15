@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-fr="Convertisseurs en ligne gratuits - kg lbs, km miles, °C °F">Free Online Converters - kg lbs, km miles, °C °F</title>
+<meta name="description" content="Convertisseurs gratuits : kg en lbs, km en miles, semaines en heures. Instantané, précis, mobile.">
+<style>
+:root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2);--glass:rgba(255,255,255,0.05)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+.container{max-width:1400px;margin:auto;padding:20px}
+.lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+.lang-btn{padding:12px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all 0.3s}
+.lang-btn.active{background:var(--primary);color:white;transform:scale(1.05)}
+.hero{position:relative;height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.05));border-radius:32px;margin:40px 20px;padding:60px 40px;backdrop-filter:blur(20px);box-shadow:0 40px 80px rgba(0,0,0,0.5)}
+.hero h1{font-size:clamp(3rem,8vw,5rem);background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;margin-bottom:20px;position:relative;z-index:2}
+.hero-subtitle{font-size:1.4rem;color:var(--muted);max-width:800px;margin:0 auto;position:relative;z-index:2}
+.hero-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 20%,rgba(16,185,129,0.15),transparent 50%),radial-gradient(circle at 80% 80%,rgba(34,211,153,0.1),transparent 50%);border-radius:32px}
+.search-bar{background:rgba(17,24,39,0.9);border-radius:24px;padding:20px;margin:60px auto;max-width:600px;border:1px solid var(--border);backdrop-filter:blur(20px);box-shadow:0 25px 50px rgba(0,0,0,0.4)}
+.search-input{width:100%;padding:20px;background:rgba(31,41,55,0.8);border:2px solid transparent;border-radius:20px;color:var(--text);font-size:1.3rem;font-weight:600;text-align:center;font-family:monospace;transition:all 0.3s}
+.search-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,0.2)}
+.categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:80px 0}
+.category-card{background:rgba(17,24,39,0.9);border-radius:24px;padding:32px;border:1px solid var(--border);backdrop-filter:blur(20px);transition:all 0.3s;box-shadow:0 20px 40px rgba(0,0,0,0.3);text-decoration:none;color:var(--text);display:block}
+.category-card:hover{transform:translateY(-8px);box-shadow:0 35px 70px rgba(16,185,129,0.3);border-color:var(--primary)}
+.category-icon{font-size:4rem;margin-bottom:20px;display:block;text-align:center}
+.category-title{font-size:1.6rem;font-weight:800;margin-bottom:12px}
+.category-desc{font-size:1.1rem;color:var(--muted);line-height:1.6}
+.stats-bar{background:rgba(17,24,39,0.8);border-radius:20px;padding:24px;margin:60px 0;border:1px solid var(--border);backdrop-filter:blur(20px);text-align:center}
+.stat-item{display:inline-block;margin:0 40px;font-size:1.3rem;font-weight:600}
+.stat-number{font-size:2.5rem;font-weight:900;color:var(--primary);display:block}
+.footer{background:rgba(15,23,42,0.9);border-radius:24px;padding:40px;margin:60px 20px 40px;border:1px solid var(--border);backdrop-filter:blur(20px);text-align:center}
+@media(max-width:768px){.hero{padding:40px 20px;margin:20px 0}.categories{grid-template-columns:1fr;gap:20px}.stat-item{margin:0 20px 20px}}
+[data-lang="en"] [data-fr], [data-lang="fr"] [data-en]{display:none}
+</style>
+</head>
+<body data-lang="fr">
+<!-- BOUTONS LANGUES -->
+<div class="lang-switch">
+<button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+<button class="lang-btn" data-lang="en">🇺🇸 English</button>
+</div>
+
+<div class="container">
+<!-- HERO BILINGUE -->
+<div class="hero">
+<div class="hero-bg"></div>
+<h1 data-fr>Convertisseurs<br><strong>en ligne gratuits</strong></h1>
+<h1 data-en>Free<br><strong>Online Converters</strong></h1>
+<p class="hero-subtitle" data-fr>Plus de <strong>50 convertisseurs</strong> précis et instantanés.<br>Pas d'inscription, 100% gratuit, compatible mobile.</p>
+<p class="hero-subtitle" data-en>Over <strong>50 converters</strong> precise & instant.<br>No signup, 100% free, mobile friendly.</p>
+</div>
+
+<!-- RECHERCHE BILINGUE -->
+<div class="search-bar">
+<input type="text" class="search-input" data-fr placeholder="Rechercher : kg lbs, km miles, semaine heure..." data-en placeholder="Search: kg lbs, km miles, week hours...">
+<p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:12px" data-fr>Exemples : <strong>"kg en lbs"</strong> <strong>"semaine heure"</strong></p>
+<p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:12px;display:none" data-en>Examples: <strong>"kg to lbs"</strong> <strong>"week hours"</strong></p>
+</div>
+
+<!-- GRILLE CATÉGORIES BILINGUE -->
+<section class="categories">
+<a href="semaine-heure.html" class="category-card">
+<div class="category-icon">⏰</div>
+<h2 class="category-title" data-fr>Temps</h2>
+<h2 class="category-title" data-en>Time</h2>
+<p class="category-desc" data-fr>Semaines ↔ Heures, Jours ↔ Mois. Gestion de projet, RH.</p>
+<p class="category-desc" data-en>Weeks ↔ Hours, Days ↔ Months. Project mgmt, HR.</p>
+</a>
+
+<a href="kg-lbs.html" class="category-card">
+<div class="category-icon">⚖️</div>
+<h2 class="category-title" data-fr>Poids</h2>
+<h2 class="category-title" data-en>Weight</h2>
+<p class="category-desc" data-fr>kg ↔ lbs, tonnes ↔ short tons. Musculation, logistique.</p>
+<p class="category-desc" data-en>kg ↔ lbs, tons ↔ short tons. Weightlifting, logistics.</p>
+</a>
+
+<a href="km-miles.html" class="category-card">
+<div class="category-icon">📏</div>
+<h2 class="category-title" data-fr>Distance</h2>
+<h2 class="category-title" data-en>Distance</h2>
+<p class="category-desc" data-fr>km ↔ miles, m ↔ pieds. Voyages, sport.</p>
+<p class="category-desc" data-en>km ↔ miles, m ↔ feet. Travel, sports.</p>
+</a>
+
+<a href="celsius-fahrenheit.html" class="category-card">
+<div class="category-icon">🌡️</div>
+<h2 class="category-title" data-fr>Température</h2>
+<h2 class="category-title" data-en>Temperature</h2>
+<p class="category-desc" data-fr>°C ↔ °F. Météo, cuisine, science.</p>
+<p class="category-desc" data-en>°C ↔ °F. Weather, cooking, science.</p>
+</a>
+
+<a href="liters-gallons.html" class="category-card">
+<div class="category-icon">💧</div>
+<h2 class="category-title" data-fr>Volume</h2>
+<h2 class="category-title" data-en>Volume</h2>
+<p class="category-desc" data-fr>Litres ↔ Gallons. Cuisine, voiture.</p>
+<p class="category-desc" data-en>Liters ↔ Gallons. Cooking, cars.</p>
+</a>
+
+<a href="watts-hp.html" class="category-card">
+<div class="category-icon">⚡</div>
+<h2 class="category-title" data-fr>Puissance</h2>
+<h2 class="category-title" data-en>Power</h2>
+<p class="category-desc" data-fr>Watts ↔ CV. Auto, électricité.</p>
+<p class="category-desc" data-en>Watts ↔ HP. Cars, electricity.</p>
+</a>
+</section>
+
+<!-- STATS BILINGUES -->
+<div class="stats-bar">
+<div class="stat-item">
+<span class="stat-number">50+</span>
+<span data-fr>Convertisseurs</span>
+<span data-en>Converters</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">168</span>
+<span data-fr>Heures/semaine</span>
+<span data-en>Hours/week</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">2.20</span>
+<span data-fr>kg/lbs</span>
+<span data-en>kg/lbs</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">100%</span>
+<span data-fr>Gratuit</span>
+<span data-en>Free</span>
+</div>
+</div>
+
+<!-- FOOTER BILINGUE -->
+<footer class="footer">
+<p data-fr><strong>Mon Convertisseur</strong> © 2026 • Outils gratuits, précis, sans inscription</p>
+<p data-en><strong>My Converter</strong> © 2026 • Free tools, precise, no signup</p>
+<p data-fr>Compatible mobile • Fait avec ❤️ en France</p>
+<p data-en>Mobile friendly • Made with ❤️ in France</p>
+</footer>
+</div>
+
+<script>
+// CHANGEMENT LANGUE
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.onclick = () => {
+    const lang = btn.dataset.lang;
+    document.body.dataset.lang = lang;
+    
+    // Toggle boutons
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Toggle title
+    document.title = lang === 'fr' ? 
+      'Convertisseurs en ligne gratuits - kg lbs, km miles, °C °F' : 
+      'Free Online Converters - kg lbs, km miles, °C °F';
+  };
+});
+
+// RECHERCHE (fonctionne les 2 langues)
+document.querySelector('.search-input').onkeyup = function() {
+  const query = this.value.toLowerCase();
+  document.querySelectorAll('.category-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? 'block' : 'none';
+  });
+};
+</script>
+</body>
+</html>

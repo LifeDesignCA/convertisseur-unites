@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convertir Semaine en Heure — 1 Semaine = 168 Heures Exactement</title>
+<meta name="description" content="Convertisseur semaine en heure GRATUIT. 1 semaine = 168h exactement. Bidirectionnel, précision 20 décimales. Projets, RH, planning.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="semaine-heure.html">
+<style>
+:root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+.container{max-width:1000px;margin:auto;padding:20px}
+.lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+.lang-btn{padding:10px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all 0.3s}
+.lang-btn:hover{background:rgba(16,185,129,0.2)}
+.lang-btn.active{background:var(--primary);color:white;transform:scale(1.05)}
+.hero{text-align:center;margin:80px 20px 40px;padding:48px 24px;background:rgba(255,255,255,0.05);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
+h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:0 0 16px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+.hero-subtitle{font-size:1.25rem;color:var(--muted);max-width:700px;margin:0 auto;line-height:1.6}
+.intro-section,.content-section{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border);margin:32px 0;backdrop-filter:blur(20px)}
+.intro-title,.section-title{font-size:1.5rem;margin-bottom:20px;font-weight:700}
+.converter-main{background:rgba(17,24,39,0.97);border-radius:28px;padding:40px;border:1px solid var(--border);backdrop-filter:blur(25px);box-shadow:0 35px 70px rgba(0,0,0,0.5);margin:40px 0}
+.converter-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+.converter-title{font-size:1.6rem;font-weight:800}
+.precision-group{display:flex;gap:8px;align-items:center;font-size:0.9rem}
+.precision-select{padding:8px 12px;background:rgba(55,65,81,0.8);border:1px solid var(--border);border-radius:12px;color:var(--text)}
+.units-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin:32px 0}
+.unit-card{background:rgba(31,41,55,0.8);border-radius:20px;padding:20px;border:1px solid var(--border);transition:all 0.3s;text-align:center}
+.unit-card:hover{border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+.unit-label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:12px;font-weight:600;line-height:1.2}
+.value-input{width:100%;padding:16px 12px;background:rgba(15,23,42,0.95);border:2px solid transparent;border-radius:16px;color:var(--text);font-size:2rem;font-weight:900;text-align:center;font-family:monospace;transition:all 0.3s}
+.value-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,0.25)}
+.swap-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#059669);border:3px solid rgba(255,255,255,0.3);color:white;font-size:1.4rem;font-weight:bold;cursor:pointer;transition:all 0.3s;box-shadow:0 15px 30px rgba(16,185,129,0.4);margin:0 auto}
+.swap-btn:hover{transform:translateY(-4px) scale(1.08);box-shadow:0 20px 40px rgba(16,185,129,0.5)}
+.result-display{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05));border-radius:16px;padding:20px;margin:20px 0;border:2px solid rgba(16,185,129,0.3);text-align:center}
+.result-big{font-size:2.2rem;font-weight:900;color:var(--primary);margin:0 0 10px 0;font-family:monospace}
+.result-small{font-size:1rem;color:var(--muted)}
+.examples-table{width:100%;border-collapse:collapse;background:rgba(31,41,55,0.6);border-radius:16px;overflow:hidden;margin:24px 0}
+.examples-table th{padding:16px 20px;text-align:left;font-weight:700;background:var(--primary);color:white}
+.examples-table td{padding:16px 20px;border-bottom:1px solid var(--border)}
+.content-card{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border)}
+.content-card ul{margin:20px 0;padding-left:20px}
+.content-card li{margin:8px 0}
+.content-title{font-size:1.3rem;margin-bottom:16px;font-weight:700;color:var(--primary)}
+.faq-item{margin-bottom:24px}
+.faq-question{font-size:1.1rem;font-weight:700;color:var(--primary);margin-bottom:12px;cursor:pointer;padding:12px;background:rgba(31,41,55,0.5);border-radius:8px;transition:background 0.3s}
+.faq-question:hover{background:rgba(31,41,55,0.8)}
+.faq-answer{padding:16px;background:rgba(55,65,81,0.5);border-radius:12px;border-left:4px solid var(--primary);margin-top:8px;display:none}
+.faq-answer.active{display:block}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:60px 0}
+@media(max-width:900px){.content-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.units-grid{grid-template-columns:1fr}.swap-btn{grid-column:1/-1;margin:20px 0}}
+
+/* Système de langue */
+[data-lang-text]{display:none}
+body[data-lang="fr"] [data-lang-text="fr"]{display:block}
+body[data-lang="en"] [data-lang-text="en"]{display:block}
+body[data-lang="fr"] span[data-lang-text="fr"],
+body[data-lang="en"] span[data-lang-text="en"]{display:inline}
+body[data-lang="fr"] li[data-lang-text="fr"],
+body[data-lang="en"] li[data-lang-text="en"]{display:list-item}
+</style>
+</head>
+<body data-lang="fr">
+<div class="lang-switch">
+<button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
+<button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
+</div>
+
+<div class="container">
+<!-- HERO -->
+<div class="hero">
+<h1 data-lang-text="fr">Convertir Semaine en Heure</h1>
+<h1 data-lang-text="en">Convert Weeks to Hours</h1>
+<p class="hero-subtitle" data-lang-text="fr">Notre <strong>convertisseur semaine en heure</strong> gratuit vous permet de transformer instantanément n'importe quel nombre de semaines en son équivalent exact en heures. Tapez dans n'importe quel champ.</p>
+<p class="hero-subtitle" data-lang-text="en">Our free <strong>weeks to hours converter</strong> instantly transforms any number of weeks into exact hours. Type in either field.</p>
+</div>
+
+<!-- CONVERTISSEUR -->
+<div class="converter-main">
+<div class="converter-header">
+<h2 class="converter-title" data-lang-text="fr">Convertisseur Semaine en Heure</h2>
+<h2 class="converter-title" data-lang-text="en">Weeks to Hours Converter</h2>
+<div class="precision-group">
+<span data-lang-text="fr">Précision:</span>
+<span data-lang-text="en">Precision:</span>
+<select id="precision" class="precision-select">
+<option value="auto">Auto</option>
+<option value="2">2 déc.</option>
+<option value="3">3 déc.</option>
+<option value="4">4 déc.</option>
+<option value="6">6 déc.</option>
+<option value="10">10 déc.</option>
+<option value="20">20 déc.</option>
+</select>
+</div>
+</div>
+
+<div class="units-grid">
+<div class="unit-card" id="fromCard">
+<div class="unit-label">
+<span data-lang-text="fr" class="from-label-fr">DE: Semaines</span>
+<span data-lang-text="en" class="from-label-en">FROM: Weeks</span>
+</div>
+<input id="inputFrom" class="value-input" type="number" step="any" placeholder="0">
+</div>
+
+<button class="swap-btn" id="swapBtn" title="Inverser">↔</button>
+
+<div class="unit-card" id="toCard">
+<div class="unit-label">
+<span data-lang-text="fr" class="to-label-fr">À: Heures</span>
+<span data-lang-text="en" class="to-label-en">TO: Hours</span>
+</div>
+<input id="inputTo" class="value-input" type="number" step="any" placeholder="0">
+</div>
+</div>
+
+<div class="result-display" id="resultDisplay" style="display:none">
+<div class="result-big" id="resultBig"></div>
+<div class="result-small" data-lang-text="fr">Tapez un montant pour convertir</div>
+<div class="result-small" data-lang-text="en">Type an amount to convert</div>
+</div>
+</div>
+
+<!-- DÉTAILS -->
+<div class="intro-section">
+<h3 class="intro-title" data-lang-text="fr">Pourquoi Convertir des Semaines en Heures ?</h3>
+<h3 class="intro-title" data-lang-text="en">Why Convert Weeks to Hours?</h3>
+<p data-lang-text="fr">La conversion entre différentes unités de temps est essentielle dans de nombreux domaines :</p>
+<p data-lang-text="en">Time unit conversion is essential across many fields:</p>
+<ul style="font-size:1.05rem;line-height:1.8;margin:24px 0;padding-left:24px">
+<li data-lang-text="fr"><strong>Gestion de projet</strong> : Estimez avec précision les délais et la durée des tâches</li>
+<li data-lang-text="fr"><strong>Ressources humaines</strong> : Calculez les heures de travail sur plusieurs semaines</li>
+<li data-lang-text="fr"><strong>Éducation</strong> : Déterminez les heures de cours sur un semestre</li>
+<li data-lang-text="fr"><strong>Planification personnelle</strong> : Organisez votre temps efficacement</li>
+<li data-lang-text="fr"><strong>Programmation</strong> : Utilisez les bonnes unités temporelles</li>
+<li data-lang-text="en"><strong>Project management</strong>: Accurately estimate deadlines and task duration</li>
+<li data-lang-text="en"><strong>Human resources</strong>: Calculate work hours over multiple weeks</li>
+<li data-lang-text="en"><strong>Education</strong>: Determine course hours per semester</li>
+<li data-lang-text="en"><strong>Personal planning</strong>: Organize your time effectively</li>
+<li data-lang-text="en"><strong>Programming</strong>: Use the correct time units</li>
+</ul>
+</div>
+
+<div class="content-section">
+<h3 class="section-title" data-lang-text="fr">Comment Fonctionne Notre Convertisseur ?</h3>
+<h3 class="section-title" data-lang-text="en">How Does Our Converter Work?</h3>
+<p data-lang-text="fr">L'utilisation de notre outil est simple et intuitive :</p>
+<p data-lang-text="en">Using our tool is simple and intuitive:</p>
+<ol style="margin:20px 0;padding-left:24px;font-size:1.05rem">
+<li data-lang-text="fr">Entrez le nombre de semaines ou d'heures</li>
+<li data-lang-text="fr">Choisissez la précision (2 à 20 décimales)</li>
+<li data-lang-text="fr">Le résultat s'affiche instantanément</li>
+<li data-lang-text="fr">Utilisez le bouton ↔ pour inverser</li>
+<li data-lang-text="en">Enter the number of weeks or hours</li>
+<li data-lang-text="en">Choose precision (2 to 20 decimals)</li>
+<li data-lang-text="en">Result displays instantly</li>
+<li data-lang-text="en">Use the ↔ button to swap</li>
+</ol>
+<p data-lang-text="fr" style="margin-top:20px">Notre convertisseur utilise : <strong>1 semaine = 168 heures</strong> (7×24).</p>
+<p data-lang-text="en" style="margin-top:20px">Our converter uses: <strong>1 week = 168 hours</strong> (7×24).</p>
+</div>
+
+<div class="content-grid">
+<div class="content-card">
+<h3 class="content-title" data-lang-text="fr">Formule de Conversion</h3>
+<h3 class="content-title" data-lang-text="en">Conversion Formula</h3>
+<div style="background:rgba(31,41,55,0.8);padding:20px;border-radius:16px;border-left:5px solid var(--primary);font-family:monospace;font-size:1.1rem;margin-bottom:20px">
+<span data-lang-text="fr"><strong>Heures = Semaines × 168</strong></span>
+<span data-lang-text="en"><strong>Hours = Weeks × 168</strong></span>
+</div>
+<ul>
+<li data-lang-text="fr">1 semaine = 168 heures</li>
+<li data-lang-text="fr">2 semaines = 336 heures</li>
+<li data-lang-text="fr">4,5 semaines = 756 heures</li>
+<li data-lang-text="en">1 week = 168 hours</li>
+<li data-lang-text="en">2 weeks = 336 hours</li>
+<li data-lang-text="en">4.5 weeks = 756 hours</li>
+</ul>
+</div>
+
+<div class="content-card">
+<h3 class="content-title" data-lang-text="fr">Exemples Courants</h3>
+<h3 class="content-title" data-lang-text="en">Common Examples</h3>
+<table class="examples-table">
+<thead>
+<tr>
+<th data-lang-text="fr">Semaines</th>
+<th data-lang-text="en">Weeks</th>
+<th data-lang-text="fr">Heures</th>
+<th data-lang-text="en">Hours</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>168</td><td data-lang-text="fr">Semaine type</td><td data-lang-text="en">Typical week</td></tr>
+<tr><td>2</td><td>336</td><td data-lang-text="fr">Bi-semaine</td><td data-lang-text="en">Bi-weekly</td></tr>
+<tr><td>4</td><td>672</td><td data-lang-text="fr">1 mois</td><td data-lang-text="en">1 month</td></tr>
+<tr><td>12</td><td>2 016</td><td data-lang-text="fr">Trimestre</td><td data-lang-text="en">Quarter</td></tr>
+<tr><td>52</td><td>8 736</td><td data-lang-text="fr">1 année</td><td data-lang-text="en">1 year</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="content-section">
+<h3 class="section-title">FAQ</h3>
+
+<div class="faq-item">
+<div class="faq-question" data-lang-text="fr">Combien d'heures dans 1 semaine ?</div>
+<div class="faq-question" data-lang-text="en">How many hours in 1 week?</div>
+<div class="faq-answer" data-lang-text="fr">168 heures exactement (7 jours × 24 heures).</div>
+<div class="faq-answer" data-lang-text="en">Exactly 168 hours (7 days × 24 hours).</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" data-lang-text="fr">35h/semaine représente quel pourcentage du total ?</div>
+<div class="faq-question" data-lang-text="en">What percentage is 35h/week of total time?</div>
+<div class="faq-answer" data-lang-text="fr">35/168 = <strong>20,83%</strong> du temps total d'une semaine.</div>
+<div class="faq-answer" data-lang-text="en">35/168 = <strong>20.83%</strong> of a week's total time.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question" data-lang-text="fr">Comment convertir des heures en semaines ?</div>
+<div class="faq-question" data-lang-text="en">How to convert hours to weeks?</div>
+<div class="faq-answer" data-lang-text="fr">Divisez le nombre d'heures par 168. Exemple : 500 heures ÷ 168 = 2,976 semaines.</div>
+<div class="faq-answer" data-lang-text="en">Divide the number of hours by 168. Example: 500 hours ÷ 168 = 2.976 weeks.</div>
+</div>
+</div>
+</div>
+
+<script>
+const FACTOR = 168;
+let isSwapped = false;
+
+// Labels pour le swap
+const labels = {
+  fr: { from: 'DE: Semaines', to: 'À: Heures', fromSwap: 'DE: Heures', toSwap: 'À: Semaines' },
+  en: { from: 'FROM: Weeks', to: 'TO: Hours', fromSwap: 'FROM: Hours', toSwap: 'TO: Weeks' }
+};
+
+function getCurrentLang() {
+  return document.body.dataset.lang || 'fr';
+}
+
+function formatNumber(num) {
+  const precValue = document.getElementById('precision').value;
+  let prec;
+  if (precValue === 'auto') {
+    prec = Number.isInteger(num) ? 0 : (Math.abs(num) < 0.01 ? 6 : 2);
+  } else {
+    prec = parseInt(precValue);
+  }
+  return parseFloat(num.toFixed(prec)).toString();
+}
+
+function updateLabels() {
+  const lang = getCurrentLang();
+  const fromLabelFr = document.querySelector('.from-label-fr');
+  const fromLabelEn = document.querySelector('.from-label-en');
+  const toLabelFr = document.querySelector('.to-label-fr');
+  const toLabelEn = document.querySelector('.to-label-en');
+  
+  if (isSwapped) {
+    fromLabelFr.textContent = labels.fr.fromSwap;
+    fromLabelEn.textContent = labels.en.fromSwap;
+    toLabelFr.textContent = labels.fr.toSwap;
+    toLabelEn.textContent = labels.en.toSwap;
+  } else {
+    fromLabelFr.textContent = labels.fr.from;
+    fromLabelEn.textContent = labels.en.from;
+    toLabelFr.textContent = labels.fr.to;
+    toLabelEn.textContent = labels.en.to;
+  }
+}
+
+function convert(source) {
+  const inputFrom = document.getElementById('inputFrom');
+  const inputTo = document.getElementById('inputTo');
+  const lang = getCurrentLang();
+  
+  let result, displayText;
+  
+  if (source === 'from') {
+    const value = parseFloat(inputFrom.value) || 0;
+    if (isSwapped) {
+      // Heures vers Semaines
+      result = value / FACTOR;
+      inputTo.value = value ? formatNumber(result) : '';
+      displayText = lang === 'fr' 
+        ? `${value} Heures = ${formatNumber(result)} Semaines`
+        : `${value} Hours = ${formatNumber(result)} Weeks`;
+    } else {
+      // Semaines vers Heures
+      result = value * FACTOR;
+      inputTo.value = value ? formatNumber(result) : '';
+      displayText = lang === 'fr'
+        ? `${value} Semaines = ${formatNumber(result)} Heures`
+        : `${value} Weeks = ${formatNumber(result)} Hours`;
+    }
+  } else {
+    const value = parseFloat(inputTo.value) || 0;
+    if (isSwapped) {
+      // Semaines vers Heures (inverse)
+      result = value * FACTOR;
+      inputFrom.value = value ? formatNumber(result) : '';
+      displayText = lang === 'fr'
+        ? `${formatNumber(result)} Heures = ${value} Semaines`
+        : `${formatNumber(result)} Hours = ${value} Weeks`;
+    } else {
+      // Heures vers Semaines (inverse)
+      result = value / FACTOR;
+      inputFrom.value = value ? formatNumber(result) : '';
+      displayText = lang === 'fr'
+        ? `${formatNumber(result)} Semaines = ${value} Heures`
+        : `${formatNumber(result)} Weeks = ${value} Hours`;
+    }
+  }
+  
+  const resultDisplay = document.getElementById('resultDisplay');
+  const resultBig = document.getElementById('resultBig');
+  
+  if (inputFrom.value || inputTo.value) {
+    resultBig.textContent = displayText;
+    resultDisplay.style.display = 'block';
+  } else {
+    resultDisplay.style.display = 'none';
+  }
+}
+
+function swapUnits() {
+  isSwapped = !isSwapped;
+  
+  // Échanger les valeurs
+  const inputFrom = document.getElementById('inputFrom');
+  const inputTo = document.getElementById('inputTo');
+  const tempValue = inputFrom.value;
+  inputFrom.value = inputTo.value;
+  inputTo.value = tempValue;
+  
+  // Mettre à jour les labels
+  updateLabels();
+  
+  // Recalculer si nécessaire
+  if (inputFrom.value) {
+    convert('from');
+  }
+}
+
+// Event Listeners
+document.getElementById('inputFrom').addEventListener('input', () => convert('from'));
+document.getElementById('inputTo').addEventListener('input', () => convert('to'));
+document.getElementById('precision').addEventListener('change', () => {
+  if (document.getElementById('inputFrom').value) {
+    convert('from');
+  } else if (document.getElementById('inputTo').value) {
+    convert('to');
+  }
+});
+document.getElementById('swapBtn').addEventListener('click', swapUnits);
+
+// Changement de langue
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const newLang = btn.dataset.setLang;
+    document.body.dataset.lang = newLang;
+    
+    // Mettre à jour les boutons actifs
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    // Mettre à jour le titre de la page
+    document.title = newLang === 'fr' 
+      ? 'Convertir Semaine en Heure — 1 Semaine = 168 Heures Exactement'
+      : 'Convert Weeks to Hours — 1 Week = 168 Hours Exactly';
+    
+    // Mettre à jour les labels
+    updateLabels();
+    
+    // Recalculer l'affichage du résultat
+    if (document.getElementById('inputFrom').value) {
+      convert('from');
+    }
+  });
+});
+
+// FAQ toggle
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', function() {
+    // Trouver la réponse correspondante (même langue)
+    const lang = getCurrentLang();
+    const parent = this.closest('.faq-item');
+    const answers = parent.querySelectorAll('.faq-answer');
+    
+    answers.forEach(answer => {
+      if (answer.dataset.langText === lang) {
+        answer.classList.toggle('active');
+      }
+    });
+  });
+});
+
+// Initialisation
+updateLabels();
+</script>
+</body>
+</html>
