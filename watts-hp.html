@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Convertir Watts en Horsepower — (W en HP) Précision Électrique</title>
+    <meta name="description" content="Convertisseur Watts en Horsepower (HP) GRATUIT. 1 HP = 746W. Idéal pour moteurs électriques, outillage et mécanique.">
+    <link rel="canonical" href="https://lifedesignca.github.io/convertisseur-unites/watts-hp.html">
+
+    <style>
+        :root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2)}
+        *{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+        .container{max-width:1000px;margin:auto;padding:20px}
+        .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+        .lang-btn{padding:10px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all 0.3s}
+        .lang-btn.active{background:var(--primary);color:white;transform:scale(1.05)}
+        .hero{text-align:center;margin:80px 20px 40px;padding:48px 24px;background:rgba(255,255,255,0.05);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
+        h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:0 0 16px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+        .hero-subtitle{font-size:1.25rem;color:var(--muted);max-width:700px;margin:0 auto;line-height:1.6}
+        .converter-main{background:rgba(17,24,39,0.97);border-radius:28px;padding:40px;border:1px solid var(--border);backdrop-filter:blur(25px);box-shadow:0 35px 70px rgba(0,0,0,0.5);margin:40px 0}
+        .converter-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+        .converter-title{font-size:1.6rem;font-weight:800}
+        .precision-group{display:flex;gap:8px;align-items:center;font-size:0.9rem}
+        .precision-select{padding:8px 12px;background:rgba(55,65,81,0.8);border:1px solid var(--border);border-radius:12px;color:var(--text)}
+        .units-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin:32px 0}
+        .unit-card{background:rgba(31,41,55,0.8);border-radius:20px;padding:20px;border:1px solid var(--border);transition:all 0.3s;text-align:center}
+        .unit-card:hover{border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+        .unit-label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:12px;font-weight:600}
+        .value-input{width:100%;padding:16px 12px;background:rgba(15,23,42,0.95);border:2px solid transparent;border-radius:16px;color:var(--text);font-size:2rem;font-weight:900;text-align:center;font-family:monospace}
+        .swap-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#059669);border:3px solid rgba(255,255,255,0.3);color:white;font-size:1.4rem;cursor:pointer;transition:all 0.3s}
+        .swap-btn:hover{transform: scale(1.1); box-shadow: 0 0 20px rgba(16,185,129,0.4);}
+        .result-display{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05));border-radius:16px;padding:20px;margin:20px 0;border:2px solid rgba(16,185,129,0.3);text-align:center}
+        .result-big{font-size:2.2rem;font-weight:900;color:var(--primary);font-family:monospace}
+        .content-section{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border);margin:32px 0}
+        
+        [data-lang-text]{display:none}
+        body[data-lang="fr"] [data-lang-text="fr"]{display:block}
+        body[data-lang="en"] [data-lang-text="en"]{display:block}
+
+        @media(max-width:768px){.units-grid{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body data-lang="fr">
+    <div class="lang-switch">
+        <button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
+        <button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1 data-lang-text="fr">Convertir Watts en HP</h1>
+            <h1 data-lang-text="en">Convert Watts to HP</h1>
+            <p class="hero-subtitle" data-lang-text="fr">Calculez la puissance de vos moteurs électriques. Indispensable pour la mécanique et l'outillage industriel.</p>
+            <p class="hero-subtitle" data-lang-text="en">Calculate the power of your electric motors. Essential for mechanics and industrial tooling.</p>
+        </div>
+
+        <div class="converter-main">
+            <div class="converter-header">
+                <h2 class="converter-title" data-lang-text="fr">Puissance</h2>
+                <h2 class="converter-title" data-lang-text="en">Power</h2>
+                <div class="precision-group">
+                    <span data-lang-text="fr">Précision:</span>
+                    <span data-lang-text="en">Precision:</span>
+                    <select id="precision" class="precision-select">
+                        <option value="auto">Auto</option>
+                        <option value="2">2 déc.</option>
+                        <option value="4">4 déc.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-label">
+                        <span data-lang-text="fr" class="from-label-fr">DE: Watts (W)</span>
+                        <span data-lang-text="en" class="from-label-en">FROM: Watts (W)</span>
+                    </div>
+                    <input id="inputFrom" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+
+                <button class="swap-btn" id="swapBtn">↔</button>
+
+                <div class="unit-card">
+                    <div class="unit-label">
+                        <span data-lang-text="fr" class="to-label-fr">À: Horsepower (HP)</span>
+                        <span data-lang-text="en" class="to-label-en">TO: Horsepower (HP)</span>
+                    </div>
+                    <input id="inputTo" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+            </div>
+
+            <div class="result-display" id="resultDisplay" style="display:none">
+                <div class="result-big" id="resultBig"></div>
+                <div class="result-small" data-lang-text="fr">Note : Calculé sur la base de 1 HP = 746 W (Électrique).</div>
+                <div class="result-small" data-lang-text="en">Note: Calculated based on 1 HP = 746 W (Electric).</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="content-title" style="color:var(--primary)" data-lang-text="fr">Le saviez-vous ?</h2>
+            <h2 class="content-title" style="color:var(--primary)" data-lang-text="en">Did you know?</h2>
+            <p data-lang-text="fr">Il existe plusieurs définitions du "Horsepower" (cheval-vapeur). Le <strong>HP électrique</strong> (746 W) est utilisé pour les moteurs, tandis que le <strong>HP mécanique</strong> (745,7 W) est plus commun pour les moteurs à combustion. La différence est minime mais importante pour la haute précision.</p>
+            <p data-lang-text="en">There are several definitions of "Horsepower". <strong>Electric HP</strong> (746 W) is used for motors, while <strong>Mechanical HP</strong> (745.7 W) is more common for combustion engines. The difference is small but important for high precision.</p>
+        </div>
+    </div>
+
+    <script>
+        const FACTOR = 0.00134102; // 1 W = 0.00134102 HP (Electrique)
+        const HP_TO_W = 746;
+        let isSwapped = false;
+
+        function updateLabels() {
+            const fFr = document.querySelector('.from-label-fr'), fEn = document.querySelector('.from-label-en');
+            const tFr = document.querySelector('.to-label-fr'), tEn = document.querySelector('.to-label-en');
+            if (!isSwapped) {
+                fFr.textContent="DE: Watts (W)"; fEn.textContent="FROM: Watts (W)";
+                tFr.textContent="À: Horsepower (HP)"; tEn.textContent="TO: Horsepower (HP)";
+            } else {
+                fFr.textContent="DE: Horsepower (HP)"; fEn.textContent="FROM: Horsepower (HP)";
+                tFr.textContent="À: Watts (W)"; tEn.textContent="TO: Watts (W)";
+            }
+        }
+
+        function convert(source) {
+            const vF = document.getElementById('inputFrom'), vT = document.getElementById('inputTo');
+            const resB = document.getElementById('resultBig'), resD = document.getElementById('resultDisplay');
+            const pr = document.getElementById('precision').value;
+            const fmt = (n) => pr === 'auto' ? parseFloat(n.toFixed(3)) : parseFloat(n.toFixed(parseInt(pr)));
+
+            if (source === 'from') {
+                const val = parseFloat(vF.value) || 0;
+                const res = isSwapped ? val * HP_TO_W : val * FACTOR;
+                vT.value = vF.value ? fmt(res) : '';
+            } else {
+                const val = parseFloat(vT.value) || 0;
+                const res = isSwapped ? val * FACTOR : val * HP_TO_W;
+                vF.value = vT.value ? fmt(res) : '';
+            }
+
+            if (vF.value || vT.value) {
+                resD.style.display = 'block';
+                const uL = isSwapped ? " HP" : " W", uR = isSwapped ? " W" : " HP";
+                resB.textContent = vF.value + uL + " = " + vT.value + uR;
+            } else { resD.style.display = 'none'; }
+        }
+
+        document.getElementById('inputFrom').oninput = () => convert('from');
+        document.getElementById('inputTo').oninput = () => convert('to');
+        document.getElementById('precision').onchange = () => convert('from');
+        document.getElementById('swapBtn').onclick = () => {
+            isSwapped = !isSwapped;
+            const iF = document.getElementById('inputFrom'), iT = document.getElementById('inputTo');
+            const temp = iF.value; iF.value = iT.value; iT.value = temp;
+            updateLabels(); convert('from');
+        };
+        document.querySelectorAll('.lang-btn').forEach(b => {
+            b.onclick = () => {
+                document.body.dataset.lang = b.dataset.setLang;
+                document.querySelectorAll('.lang-btn').forEach(x => x.classList.remove('active'));
+                b.classList.add('active'); updateLabels();
+            };
+        });
+        updateLabels();
+    </script>
+</body>
+</html>
