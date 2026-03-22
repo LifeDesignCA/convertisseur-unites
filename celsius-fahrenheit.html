@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Convertir Celsius en Fahrenheit — (°C en °F) Précision Exacte</title>
+    <meta name="description" content="Convertisseur Celsius en Fahrenheit GRATUIT. Formule exacte, points de repère et explications détaillées. Idéal pour la cuisine, la météo et la science.">
+    <link rel="canonical" href="https://lifedesignca.github.io/convertisseur-unites/celsius-fahrenheit.html">
+
+    <style>
+        :root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2)}
+        *{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+        .container{max-width:1000px;margin:auto;padding:20px}
+        .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+        .lang-btn{padding:10px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all 0.3s}
+        .lang-btn.active{background:var(--primary);color:white;transform:scale(1.05)}
+        .hero{text-align:center;margin:80px 20px 40px;padding:48px 24px;background:rgba(255,255,255,0.05);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
+        h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:0 0 16px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+        .hero-subtitle{font-size:1.25rem;color:var(--muted);max-width:700px;margin:0 auto;line-height:1.6}
+        .converter-main{background:rgba(17,24,39,0.97);border-radius:28px;padding:40px;border:1px solid var(--border);backdrop-filter:blur(25px);box-shadow:0 35px 70px rgba(0,0,0,0.5);margin:40px 0}
+        .converter-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+        .converter-title{font-size:1.6rem;font-weight:800}
+        .precision-group{display:flex;gap:8px;align-items:center;font-size:0.9rem}
+        .precision-select{padding:8px 12px;background:rgba(55,65,81,0.8);border:1px solid var(--border);border-radius:12px;color:var(--text)}
+        .units-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin:32px 0}
+        .unit-card{background:rgba(31,41,55,0.8);border-radius:20px;padding:20px;border:1px solid var(--border);transition:all 0.3s;text-align:center}
+        .unit-card:hover{border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+        .unit-label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:12px;font-weight:600}
+        .value-input{width:100%;padding:16px 12px;background:rgba(15,23,42,0.95);border:2px solid transparent;border-radius:16px;color:var(--text);font-size:2rem;font-weight:900;text-align:center;font-family:monospace}
+        .swap-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#059669);border:3px solid rgba(255,255,255,0.3);color:white;font-size:1.4rem;cursor:pointer;transition:all 0.3s}
+        .swap-btn:hover{transform: scale(1.1); box-shadow: 0 0 20px rgba(16,185,129,0.4);}
+        .result-display{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05));border-radius:16px;padding:20px;margin:20px 0;border:2px solid rgba(16,185,129,0.3);text-align:center}
+        .result-big{font-size:2.2rem;font-weight:900;color:var(--primary);font-family:monospace}
+        .content-section{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border);margin:32px 0}
+        .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:40px 0}
+        .content-card{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border)}
+        .content-title{font-size:1.3rem;margin-bottom:16px;font-weight:700;color:var(--primary)}
+        
+        [data-lang-text]{display:none}
+        body[data-lang="fr"] [data-lang-text="fr"]{display:block}
+        body[data-lang="en"] [data-lang-text="en"]{display:block}
+
+        @media(max-width:768px){.units-grid{grid-template-columns:1fr;}.content-grid{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body data-lang="fr">
+    <div class="lang-switch">
+        <button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
+        <button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1 data-lang-text="fr">Celsius en Fahrenheit</h1>
+            <h1 data-lang-text="en">Celsius to Fahrenheit</h1>
+            <p class="hero-subtitle" data-lang-text="fr">Convertissez vos températures instantanément. Indispensable pour la cuisine, les voyages aux USA et la science.</p>
+            <p class="hero-subtitle" data-lang-text="en">Convert temperatures instantly. Essential for cooking, travel to the USA, and science.</p>
+        </div>
+
+        <div class="converter-main">
+            <div class="converter-header">
+                <h2 class="converter-title" data-lang-text="fr">Thermomètre</h2>
+                <h2 class="converter-title" data-lang-text="en">Thermometer</h2>
+                <div class="precision-group">
+                    <span data-lang-text="fr">Précision:</span>
+                    <span data-lang-text="en">Precision:</span>
+                    <select id="precision" class="precision-select">
+                        <option value="auto">Auto</option>
+                        <option value="1">1 déc.</option>
+                        <option value="2">2 déc.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-label">
+                        <span data-lang-text="fr" class="from-label-fr">DE: Celsius (°C)</span>
+                        <span data-lang-text="en" class="from-label-en">FROM: Celsius (°C)</span>
+                    </div>
+                    <input id="inputFrom" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+
+                <button class="swap-btn" id="swapBtn">↔</button>
+
+                <div class="unit-card">
+                    <div class="unit-label">
+                        <span data-lang-text="fr" class="to-label-fr">À: Fahrenheit (°F)</span>
+                        <span data-lang-text="en" class="to-label-en">TO: Fahrenheit (°F)</span>
+                    </div>
+                    <input id="inputTo" class="value-input" type="number" step="any" placeholder="32">
+                </div>
+            </div>
+
+            <div class="result-display" id="resultDisplay" style="display:none">
+                <div class="result-big" id="resultBig"></div>
+                <div class="result-small" data-lang-text="fr">Conversion thermique exacte</div>
+                <div class="result-small" data-lang-text="en">Exact thermal conversion</div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="content-title" style="font-size:1.8rem" data-lang-text="fr">Comprendre la conversion</h2>
+            <h2 class="content-title" style="font-size:1.8rem" data-lang-text="en">Understanding the conversion</h2>
+            
+            <div class="content-grid">
+                <div class="content-card">
+                    <h3 class="content-title" data-lang-text="fr">Les Formules</h3>
+                    <h3 class="content-title" data-lang-text="en">The Formulas</h3>
+                    <p data-lang-text="fr">Contrairement à la distance ou au poids, la température ne commence pas à zéro de la même manière dans les deux systèmes.</p>
+                    <p data-lang-text="en">Unlike distance or weight, temperature doesn't start at zero the same way in both systems.</p>
+                    <div style="background:rgba(31,41,55,0.8);padding:15px;border-radius:12px;margin:10px 0;font-family:monospace;border-left:4px solid var(--primary)">
+                        °F = (°C × 9/5) + 32<br>
+                        °C = (°F - 32) × 5/9
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="content-title" data-lang-text="fr">Points de Repère</h3>
+                    <h3 class="content-title" data-lang-text="en">Reference Points</h3>
+                    <ul style="padding-left:20px; font-size:0.95rem">
+                        <li><strong>0°C (32°F)</strong> : Congélation de l'eau.</li>
+                        <li><strong>37°C (98.6°F)</strong> : Corps humain.</li>
+                        <li><strong>100°C (212°F)</strong> : Ébullition de l'eau.</li>
+                        <li><strong>-40°C (-40°F)</strong> : Point d'égalité !</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card" style="margin-top:20px">
+                <h3 class="content-title" data-lang-text="fr">Pourquoi les USA utilisent le Fahrenheit ?</h3>
+                <h3 class="content-title" data-lang-text="en">Why do the USA use Fahrenheit?</h3>
+                <p data-lang-text="fr">Le système Fahrenheit, créé en 1724, était basé sur la température la plus froide qu'on pouvait créer en laboratoire à l'époque. Bien que le Celsius soit plus logique pour la science (0 = glace, 100 = vapeur), le Fahrenheit offre une échelle plus précise pour la météo quotidienne sans utiliser de décimales.</p>
+                <p data-lang-text="en">The Fahrenheit system, created in 1724, was based on the coldest temperature achievable in a lab at the time. While Celsius is more logical for science (0 = ice, 100 = steam), Fahrenheit offers a more granular scale for daily weather without needing decimals.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isSwapped = false;
+
+        function updateLabels() {
+            const fromLabelFr = document.querySelector('.from-label-fr');
+            const fromLabelEn = document.querySelector('.from-label-en');
+            const toLabelFr = document.querySelector('.to-label-fr');
+            const toLabelEn = document.querySelector('.to-label-en');
+
+            if (!isSwapped) {
+                fromLabelFr.textContent = "DE: Celsius (°C)";
+                fromLabelEn.textContent = "FROM: Celsius (°C)";
+                toLabelFr.textContent = "À: Fahrenheit (°F)";
+                toLabelEn.textContent = "TO: Fahrenheit (°F)";
+            } else {
+                fromLabelFr.textContent = "DE: Fahrenheit (°F)";
+                fromLabelEn.textContent = "FROM: Fahrenheit (°F)";
+                toLabelFr.textContent = "À: Celsius (°C)";
+                toLabelEn.textContent = "TO: Celsius (°C)";
+            }
+        }
+
+        function formatNumber(num) {
+            const prec = document.getElementById('precision').value;
+            if (prec === 'auto') return parseFloat(num.toFixed(1));
+            return parseFloat(num.toFixed(parseInt(prec)));
+        }
+
+        function convert(source) {
+            const valFrom = document.getElementById('inputFrom'), valTo = document.getElementById('inputTo');
+            const resDisp = document.getElementById('resultDisplay'), resBig = document.getElementById('resultBig');
+            
+            if (source === 'from') {
+                const val = parseFloat(valFrom.value);
+                if (isNaN(val)) { valTo.value = ''; } else {
+                    // Si non-inversé: C->F. Si inversé: F->C
+                    const res = isSwapped ? (val - 32) * 5/9 : (val * 9/5) + 32;
+                    valTo.value = formatNumber(res);
+                }
+            } else {
+                const val = parseFloat(valTo.value);
+                if (isNaN(val)) { valFrom.value = ''; } else {
+                    const res = isSwapped ? (val * 9/5) + 32 : (val - 32) * 5/9;
+                    valFrom.value = formatNumber(res);
+                }
+            }
+
+            if (valFrom.value !== '' || valTo.value !== '') {
+                resDisp.style.display = 'block';
+                const unitL = isSwapped ? " °F" : " °C";
+                const unitR = isSwapped ? " °C" : " °F";
+                resBig.textContent = valFrom.value + unitL + " = " + valTo.value + unitR;
+            } else {
+                resDisp.style.display = 'none';
+            }
+        }
+
+        document.getElementById('inputFrom').oninput = () => convert('from');
+        document.getElementById('inputTo').oninput = () => convert('to');
+        document.getElementById('precision').onchange = () => convert('from');
+
+        document.getElementById('swapBtn').onclick = () => { 
+            isSwapped = !isSwapped; 
+            const inputFrom = document.getElementById('inputFrom');
+            const inputTo = document.getElementById('inputTo');
+            const tempVal = inputFrom.value;
+            inputFrom.value = inputTo.value;
+            inputTo.value = tempVal;
+            updateLabels(); 
+            convert('from'); 
+        };
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.body.dataset.lang = btn.dataset.setLang;
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updateLabels();
+            };
+        });
+
+        updateLabels();
+    </script>
+</body>
+</html>
