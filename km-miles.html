@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Convertir km en miles — Kilomètres en Milles (Précision Exacte)</title>
+    <meta name="description" content="Convertisseur km en miles GRATUIT. 1 km = 0,621371 miles. Bidirectionnel, précision 20 décimales. Idéal pour voyages, running et logistique.">
+    <link rel="canonical" href="https://lifedesignca.github.io/convertisseur-unites/km-miles.html">
+
+    <style>
+        :root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2)}
+        *{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+        .container{max-width:1000px;margin:auto;padding:20px}
+        .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+        .lang-btn{padding:10px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all 0.3s}
+        .lang-btn.active{background:var(--primary);color:white;transform:scale(1.05)}
+        .hero{text-align:center;margin:80px 20px 40px;padding:48px 24px;background:rgba(255,255,255,0.05);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
+        h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:0 0 16px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+        .hero-subtitle{font-size:1.25rem;color:var(--muted);max-width:700px;margin:0 auto;line-height:1.6}
+        .converter-main{background:rgba(17,24,39,0.97);border-radius:28px;padding:40px;border:1px solid var(--border);backdrop-filter:blur(25px);box-shadow:0 35px 70px rgba(0,0,0,0.5);margin:40px 0}
+        .converter-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+        .converter-title{font-size:1.6rem;font-weight:800}
+        .precision-group{display:flex;gap:8px;align-items:center;font-size:0.9rem}
+        .precision-select{padding:8px 12px;background:rgba(55,65,81,0.8);border:1px solid var(--border);border-radius:12px;color:var(--text)}
+        .units-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin:32px 0}
+        .unit-card{background:rgba(31,41,55,0.8);border-radius:20px;padding:20px;border:1px solid var(--border);transition:all 0.3s;text-align:center}
+        .unit-card:hover{border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,0.15)}
+        .unit-label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:12px;font-weight:600}
+        .value-input{width:100%;padding:16px 12px;background:rgba(15,23,42,0.95);border:2px solid transparent;border-radius:16px;color:var(--text);font-size:2rem;font-weight:900;text-align:center;font-family:monospace}
+        .swap-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#059669);border:3px solid rgba(255,255,255,0.3);color:white;font-size:1.4rem;cursor:pointer;transition:all 0.3s}
+        .swap-btn:hover{transform: scale(1.1); box-shadow: 0 0 20px rgba(16,185,129,0.4);}
+        .result-display{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05));border-radius:16px;padding:20px;margin:20px 0;border:2px solid rgba(16,185,129,0.3);text-align:center}
+        .result-big{font-size:2.2rem;font-weight:900;color:var(--primary);font-family:monospace}
+        .content-section{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border);margin:32px 0}
+        .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:40px 0}
+        .content-card{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border)}
+        .content-title{font-size:1.3rem;margin-bottom:16px;font-weight:700;color:var(--primary)}
+        
+        [data-lang-text]{display:none}
+        body[data-lang="fr"] [data-lang-text="fr"]{display:block}
+        body[data-lang="en"] [data-lang-text="en"]{display:block}
+
+        @media(max-width:768px){.units-grid{grid-template-columns:1fr;}.content-grid{grid-template-columns:1fr;}}
+    </style>
+</head>
+<body data-lang="fr">
+    <div class="lang-switch">
+        <button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
+        <button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1 data-lang-text="fr">Convertir km en miles</h1>
+            <h1 data-lang-text="en">Convert km to miles</h1>
+            <p class="hero-subtitle" data-lang-text="fr">Passez facilement des kilomètres aux milles terrestres. Précision optimale pour vos trajets et activités sportives.</p>
+            <p class="hero-subtitle" data-lang-text="en">Easily switch between kilometers and miles. Optimal precision for your travels and sports activities.</p>
+        </div>
+
+        <div class="converter-main">
+            <div class="converter-header">
+                <h2 class="converter-title" data-lang-text="fr">Distance</h2>
+                <h2 class="converter-title" data-lang-text="en">Distance</h2>
+                <div class="precision-group">
+                    <span data-lang-text="fr">Précision:</span>
+                    <span data-lang-text="en">Precision:</span>
+                    <select id="precision" class="precision-select">
+                        <option value="auto">Auto</option>
+                        <option value="2">2 déc.</option>
+                        <option value="5">5 déc.</option>
+                        <option value="10">10 déc.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-label">
+                        <span data-lang-text="fr" class="from-label-fr">DE: Kilomètres (km)</span>
+                        <span data-lang-text="en" class="from-label-en">FROM: Kilometers (km)</span>
+                    </div>
+                    <input id="inputFrom" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+
+                <button class="swap-btn" id="swapBtn">↔</button>
+
+                <div class="unit-card">
+                    <div class="unit-label">
+                        <span data-lang-text="fr" class="to-label-fr">À: Milles (mi)</span>
+                        <span data-lang-text="en" class="to-label-en">TO: Miles (mi)</span>
+                    </div>
+                    <input id="inputTo" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+            </div>
+
+            <div class="result-display" id="resultDisplay" style="display:none">
+                <div class="result-big" id="resultBig"></div>
+                <div class="result-small" data-lang-text="fr">Résultat instantané</div>
+                <div class="result-small" data-lang-text="en">Instant result</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3 class="content-title" data-lang-text="fr">Formule Mathématique</h3>
+                <h3 class="content-title" data-lang-text="en">Math Formula</h3>
+                <div style="background:rgba(31,41,55,0.8);padding:20px;border-radius:16px;border-left:5px solid var(--primary);font-family:monospace;">
+                    <span data-lang-text="fr"><strong>Milles = km × 0.621371</strong></span>
+                    <span data-lang-text="en"><strong>Miles = km × 0.621371</strong></span>
+                </div>
+            </div>
+            <div class="content-card">
+                <h3 class="content-title">FAQ</h3>
+                <p data-lang-text="fr"><strong>1 km, c'est combien de milles ?</strong><br>Environ 0,62 mi. Un marathon de 42,195 km fait environ 26,2 miles.</p>
+                <p data-lang-text="en"><strong>How many miles in 1 km?</strong><br>About 0.62 mi. A 42.195 km marathon is approximately 26.2 miles.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const FACTOR = 0.62137119;
+        let isSwapped = false;
+
+        function updateLabels() {
+            const fromLabelFr = document.querySelector('.from-label-fr');
+            const fromLabelEn = document.querySelector('.from-label-en');
+            const toLabelFr = document.querySelector('.to-label-fr');
+            const toLabelEn = document.querySelector('.to-label-en');
+
+            if (!isSwapped) {
+                fromLabelFr.textContent = "DE: Kilomètres (km)";
+                fromLabelEn.textContent = "FROM: Kilometers (km)";
+                toLabelFr.textContent = "À: Milles (mi)";
+                toLabelEn.textContent = "TO: Miles (mi)";
+            } else {
+                fromLabelFr.textContent = "DE: Milles (mi)";
+                fromLabelEn.textContent = "FROM: Miles (mi)";
+                toLabelFr.textContent = "À: Kilomètres (km)";
+                toLabelEn.textContent = "TO: Kilometers (km)";
+            }
+        }
+
+        function formatNumber(num) {
+            const prec = document.getElementById('precision').value;
+            if (prec === 'auto') return parseFloat(num.toFixed(2));
+            return parseFloat(num.toFixed(parseInt(prec)));
+        }
+
+        function convert(source) {
+            const valFrom = document.getElementById('inputFrom'), valTo = document.getElementById('inputTo');
+            const resDisp = document.getElementById('resultDisplay'), resBig = document.getElementById('resultBig');
+            
+            if (source === 'from') {
+                const val = parseFloat(valFrom.value) || 0;
+                const res = isSwapped ? val / FACTOR : val * FACTOR;
+                valTo.value = valFrom.value ? formatNumber(res) : '';
+            } else {
+                const val = parseFloat(valTo.value) || 0;
+                const res = isSwapped ? val * FACTOR : val / FACTOR;
+                valFrom.value = valTo.value ? formatNumber(res) : '';
+            }
+
+            if (valFrom.value || valTo.value) {
+                resDisp.style.display = 'block';
+                const unitLeft = isSwapped ? " mi" : " km";
+                const unitRight = isSwapped ? " km" : " mi";
+                resBig.textContent = valFrom.value + unitLeft + " = " + valTo.value + unitRight;
+            } else {
+                resDisp.style.display = 'none';
+            }
+        }
+
+        document.getElementById('inputFrom').oninput = () => convert('from');
+        document.getElementById('inputTo').oninput = () => convert('to');
+        document.getElementById('precision').onchange = () => convert('from');
+
+        document.getElementById('swapBtn').onclick = () => { 
+            isSwapped = !isSwapped; 
+            const inputFrom = document.getElementById('inputFrom');
+            const inputTo = document.getElementById('inputTo');
+            const tempVal = inputFrom.value;
+            inputFrom.value = inputTo.value;
+            inputTo.value = tempVal;
+            updateLabels(); 
+            convert('from'); 
+        };
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.body.dataset.lang = btn.dataset.setLang;
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updateLabels();
+            };
+        });
+
+        updateLabels();
+    </script>
+</body>
+</html>
