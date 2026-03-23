@@ -44,129 +44,108 @@
   
 </head>
 <body data-lang="fr">
-<!-- BOUTONS LANGUES -->
+
 <div class="lang-switch">
-<button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
-<button class="lang-btn" data-lang="en">🇺🇸 English</button>
+  <button class="lang-btn active" data-lang="fr">Français</button>
+  <button class="lang-btn" data-lang="en">English</button>
 </div>
 
 <div class="container">
-<!-- HERO BILINGUE -->
-<div class="hero">
-<div class="hero-bg"></div>
-<h1 data-fr>Convertisseurs<br><strong>en ligne gratuits</strong></h1>
-<h1 data-en>Free<br><strong>Online Converters</strong></h1>
-<p class="hero-subtitle" data-fr>Plus de <strong>50 convertisseurs</strong> précis et instantanés.<br>Pas d'inscription, 100% gratuit, compatible mobile.</p>
-<p class="hero-subtitle" data-en>Over <strong>50 converters</strong> precise & instant.<br>No signup, 100% free, mobile friendly.</p>
-</div>
+  
+  <div class="hero">
+    <h1>
+      <span data-fr>Convertisseurs<br>en ligne gratuits</span>
+      <span data-en>Free Online Converters</span>
+    </h1>
+    <p data-fr>50+ convertisseurs précis et instantanés • 100% gratuit</p>
+    <p data-en>50+ precise converters • 100% free</p>
+  </div>
 
-<!-- RECHERCHE BILINGUE -->
-<div class="search-bar">
-<input type="text" class="search-input" data-fr placeholder="Rechercher : kg lbs, km miles, semaine heure..." data-en placeholder="Search: kg lbs, km miles, week hours...">
-<p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:12px" data-fr>Exemples : <strong>"kg en lbs"</strong> <strong>"semaine heure"</strong></p>
-<p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:12px;display:none" data-en>Examples: <strong>"kg to lbs"</strong> <strong>"week hours"</strong></p>
-</div>
+  <div class="search-bar">
+    <input type="text" class="search-input" data-fr placeholder="Rechercher un convertisseur..." data-en placeholder="Search a converter...">
+  </div>
 
-<!-- GRILLE CATÉGORIES BILINGUE -->
-<section class="categories">
-<a href="semaine-heure.html" class="category-card">
-<div class="category-icon">⏰</div>
-<h2 class="category-title" data-fr>Temps</h2>
-<h2 class="category-title" data-en>Time</h2>
-<p class="category-desc" data-fr>Semaines ↔ Heures, Jours ↔ Mois. Gestion de projet, RH.</p>
-<p class="category-desc" data-en>Weeks ↔ Hours, Days ↔ Months. Project mgmt, HR.</p>
-</a>
+  <div class="grid">
+    
+    <!-- Carte 1: Temps -->
+    <a href="semaine-heure.html" class="card">
+      <div class="card-icon">⏰</div>
+      <div class="card-title" data-fr>Temps</div>
+      <div class="card-title" data-en>Time</div>
+      <div class="card-desc" data-fr>Semaines ↔ Heures, Jours ↔ Mois</div>
+      <div class="card-desc" data-en>Weeks ↔ Hours, Days ↔ Months</div>
+      <div class="card-tag" data-fr>Gestion de projet</div>
+      <div class="card-tag" data-en>Project management</div>
+    </a>
 
-<a href="kg-lbs.html" class="converter-card">
-    <div class="card-icon">⚖️</div>
-    <h3 data-fr="Kilogrammes en Livres" data-en="Kilograms to Pounds">Kilogrammes en Livres</h3>
-    <p data-fr="Convertissez votre poids avec une précision chirurgicale (kg/lbs)." 
-       data-en="Convert weight with surgical precision (kg/lbs).">
-       Convertissez votre poids avec une précision chirurgicale (kg/lbs).
-    </p>
-    <div class="card-tag">
-        <span data-fr="Musculation & Fitness" data-en="Fitness & Gym">Musculation & Fitness</span>
-    </div>
-</a>
+    <!-- Carte 2: kg/lbs -->
+    <a href="kg-lbs.html" class="card">
+      <div class="card-icon">⚖️</div>
+      <div class="card-title" data-fr>Kilogrammes → Livres</div>
+      <div class="card-title" data-en>Kilograms → Pounds</div>
+      <div class="card-desc" data-fr>Convertissez votre poids (kg/lbs)</div>
+      <div class="card-desc" data-en>Convert your weight (kg/lbs)</div>
+      <div class="card-tag" data-fr>Musculation & Fitness</div>
+      <div class="card-tag" data-en>Fitness & Gym</div>
+    </a>
 
-<a href="km-miles.html" class="converter-card">
-    <div class="card-icon">🗺️</div>
-    <h3 data-fr="Kilomètres en Milles" data-en="Kilometers to Miles">Kilomètres en Milles</h3>
-    <p data-fr="Convertissez vos distances pour vos voyages ou entraînements (km/mi)." 
-       data-en="Convert your distances for travel or workouts (km/mi).">
-       Convertissez vos distances pour vos voyages ou entraînements (km/mi).
-    </p>
-    <div class="card-tag">
-        <span data-fr="Voyage & Sport" data-en="Travel & Sport">Voyage & Sport</span>
-    </div>
-</a>
+    <!-- Carte 3: km/miles -->
+    <a href="km-miles.html" class="card">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title" data-fr>Kilomètres → Milles</div>
+      <div class="card-title" data-en>Kilometers → Miles</div>
+      <div class="card-desc" data-fr>Convertissez vos distances (km/mi)</div>
+      <div class="card-desc" data-en>Convert distances (km/mi)</div>
+      <div class="card-tag" data-fr>Voyage & Sport</div>
+      <div class="card-tag" data-en>Travel & Sport</div>
+    </a>
 
-<a href="celsius-fahrenheit.html" class="converter-card">
-    <div class="card-icon">🌡️</div>
-    <h3 data-fr="Celsius en Fahrenheit" data-en="Celsius to Fahrenheit">Celsius en Fahrenheit</h3>
-    <p data-fr="Passez du système métrique au système impérial pour vos températures." 
-       data-en="Switch between metric and imperial systems for temperatures.">
-       Passez du système métrique au système impérial pour vos températures.
-    </p>
-    <div class="card-tag">
-        <span data-fr="Météo & Cuisine" data-en="Weather & Cooking">Météo & Cuisine</span>
-    </div>
-</a>
+    <!-- Carte 4: °C/°F -->
+    <a href="celsius-fahrenheit.html" class="card">
+      <div class="card-icon">🌡️</div>
+      <div class="card-title" data-fr>Celsius → Fahrenheit</div>
+      <div class="card-title" data-en>Celsius → Fahrenheit</div>
+      <div class="card-desc" data-fr>Convertissez les températures</div>
+      <div class="card-desc" data-en>Convert temperatures</div>
+      <div class="card-tag" data-fr>Météo & Cuisine</div>
+      <div class="card-tag" data-en>Weather & Cooking</div>
+    </a>
 
-<a href="litres-gallons.html" class="converter-card">
-    <div class="card-icon">🛢️</div>
-    <h3 data-fr="Litres en Gallons" data-en="Liters to Gallons">Litres en Gallons</h3>
-    <p data-fr="Idéal pour calculer le volume d'essence ou les recettes (L/gal)." 
-       data-en="Ideal for calculating gas volume or recipes (L/gal).">
-       Idéal pour calculer le volume d'essence ou les recettes (L/gal).
-    </p>
-    <div class="card-tag">
-        <span data-fr="Cuisine & Auto" data-en="Kitchen & Auto">Cuisine & Auto</span>
-    </div>
-</a>
+    <!-- Carte 5: litres/gallons -->
+    <a href="litres-gallons.html" class="card">
+      <div class="card-icon">🛢️</div>
+      <div class="card-title" data-fr>Litres → Gallons</div>
+      <div class="card-title" data-en>Liters → Gallons</div>
+      <div class="card-desc" data-fr>Volume essence ou recettes (L/gal)</div>
+      <div class="card-desc" data-en>Gas volume or recipes (L/gal)</div>
+      <div class="card-tag" data-fr>Cuisine & Auto</div>
+      <div class="card-tag" data-en>Kitchen & Auto</div>
+    </a>
 
-<a href="watts-hp.html" class="converter-card">
-    <div class="card-icon">⚡</div>
-    <h3 class="card-title" data-lang-text="fr">Puissance (W/HP)</h3>
-    <h3 class="card-title" data-lang-text="en">Power (W/HP)</h3>
-    <p class="card-desc" data-lang-text="fr">Convertissez la puissance électrique en chevaux-vapeur (Horsepower).</p>
-    <p class="card-desc" data-lang-text="en">Convert electrical power to Horsepower (HP).</p>
-    <div class="card-tag" data-lang-text="fr">Mécanique & Électricité</div>
-    <div class="card-tag" data-lang-text="en">Mechanics & Electricity</div>
-</a>
-</section>
+    <!-- Carte 6: watts/HP -->
+    <a href="watts-hp.html" class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title" data-fr>Watts → Chevaux</div>
+      <div class="card-title" data-en>Watts → Horsepower</div>
+      <div class="card-desc" data-fr>Puissance électrique en chevaux-vapeur</div>
+      <div class="card-desc" data-en>Electrical power to HP</div>
+      <div class="card-tag" data-fr>Mécanique & Électricité</div>
+      <div class="card-tag" data-en>Mechanics & Electricity</div>
+    </a>
 
-<!-- STATS BILINGUES -->
-<div class="stats-bar">
-<div class="stat-item">
-<span class="stat-number">50+</span>
-<span data-fr>Convertisseurs</span>
-<span data-en>Converters</span>
-</div>
-<div class="stat-item">
-<span class="stat-number">168</span>
-<span data-fr>Heures/semaine</span>
-<span data-en>Hours/week</span>
-</div>
-<div class="stat-item">
-<span class="stat-number">2.20</span>
-<span data-fr>kg/lbs</span>
-<span data-en>kg/lbs</span>
-</div>
-<div class="stat-item">
-<span class="stat-number">100%</span>
-<span data-fr>Gratuit</span>
-<span data-en>Free</span>
-</div>
-</div>
+  </div>
 
-<!-- FOOTER BILINGUE -->
-<footer class="footer">
-<p data-fr><strong>Mon Convertisseur</strong> © 2026 • Outils gratuits, précis, sans inscription</p>
-<p data-en><strong>My Converter</strong> © 2026 • Free tools, precise, no signup</p>
-<p data-fr>Compatible mobile • Fait avec ❤️ en France</p>
-<p data-en>Mobile friendly • Made with ❤️ in France</p>
-</footer>
+  <div class="stats">
+    <div><span class="stat-number">50+</span><br><span data-fr>Convertisseurs</span><span data-en>Converters</span></div>
+    <div><span class="stat-number">168</span><br><span data-fr>Heures/semaine</span><span data-en>Hours/week</span></div>
+    <div><span class="stat-number">2.20</span><br>kg/lbs</div>
+    <div><span class="stat-number">100%</span><br><span data-fr>Gratuit</span><span data-en>Free</span></div>
+  </div>
+
+  <footer class="footer">
+    <p data-fr>© 2026 Mon Convertisseur • Gratuit • Sans inscription</p>
+    <p data-en>© 2026 My Converter • Free • No signup</p>
+  </footer>
 </div>
 
 <script>
