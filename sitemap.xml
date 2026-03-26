@@ -1,17 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
   <url>
     <loc>https://lifedesignca.github.io/convertisseur-unites/</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Convertisseur Temps -->
   <url>
     <loc>https://lifedesignca.github.io/convertisseur-unites/semaine-heure.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  </urlset>
+  <!-- Convertisseur Poids -->
+  <url>
+    <loc>https://lifedesignca.github.io/convertisseur-unites/kg-lbs.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Convertisseur Distance -->
+  <url>
+    <loc>https://lifedesignca.github.io/convertisseur-unites/km-miles.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Convertisseur Température -->
+  <url>
+    <loc>https://lifedesignca.github.io/convertisseur-unites/celsius-fahrenheit.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Convertisseur Volume -->
+  <url>
+    <loc>https://lifedesignca.github.io/convertisseur-unites/litres-gallons.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Convertisseur Puissance -->
+  <url>
+    <loc>https://lifedesignca.github.io/convertisseur-unites/watts-hp.html</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
