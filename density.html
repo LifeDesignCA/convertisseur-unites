@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Density Converter | Convertisseur de Densité</title>
+    
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root { --primary: #10b981; --bg: #0f0f23; --card: #111827; --input-bg: #1f2937; --text-muted: #9ca3af; }
+        body { background-color: var(--bg); color: #e5e7eb; font-family: 'Inter', system-ui, sans-serif; margin: 0; padding: 20px; line-height: 1.8; }
+        .container { max-width: 1000px; margin: auto; }
+        
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .lang-switcher { display: flex; gap: 10px; }
+        .lang-btn { background: var(--input-bg); border: 1px solid var(--primary); color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .lang-btn.active { background: var(--primary); }
+
+        .converter-card { background: var(--card); border-radius: 24px; padding: 40px; border: 1px solid #1f2937; margin-bottom: 60px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+        .grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; }
+        .unit-box { background: var(--input-bg); border-radius: 18px; padding: 20px; text-align: center; }
+        input { background: transparent; border: none; color: white; font-size: 2.2rem; width: 100%; text-align: center; font-weight: bold; outline: none; }
+        select { background: transparent; border: none; color: var(--primary); font-size: 0.9rem; margin-top: 10px; cursor: pointer; width: 100%; outline: none; text-align-last: center; }
+        .swap-btn { background: var(--primary); border: none; width: 50px; height: 50px; border-radius: 50%; color: white; cursor: pointer; transition: 0.3s; margin: auto; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; }
+        
+        .content-main { background: var(--card); border-radius: 24px; padding: 40px; border: 1px solid #1f2937; }
+        h1, h2, h3 { color: var(--primary); font-weight: 600; }
+        h2 { border-left: 5px solid var(--primary); padding-left: 20px; margin-top: 40px; }
+        .formula-display { background: var(--input-bg); padding: 30px; border-radius: 15px; text-align: center; margin: 30px 0; font-size: 2rem; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .wiki-image { margin: 40px 0; text-align: center; background: #000; padding: 20px; border-radius: 20px; border: 1px solid #333; }
+        .wiki-image img { max-width: 100%; border-radius: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: var(--input-bg); border-radius: 10px; overflow: hidden; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #374151; }
+        th { background: rgba(16, 185, 129, 0.1); color: var(--primary); }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .swap-btn { transform: rotate(90deg); } .header-flex { flex-direction: column; gap: 20px; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-flex">
+        <h1 id="mainTitle" style="margin:0; color: white;">Calculateur de Densité</h1>
+        <div class="lang-switcher">
+            <button class="lang-btn active" id="btnFr" onclick="setLanguage('fr')">FR</button>
+            <button class="lang-btn" id="btnEn" onclick="setLanguage('en')">EN</button>
+        </div>
+    </div>
+
+    <section class="converter-card">
+        <div class="grid">
+            <div class="unit-box">
+                <input type="number" id="valFrom" value="1" step="any">
+                <select id="uFrom"></select>
+            </div>
+            <button class="swap-btn" id="swapBtn">↔</button>
+            <div class="unit-box">
+                <input type="number" id="valTo" readonly placeholder="Result">
+                <select id="uTo"></select>
+            </div>
+        </div>
+    </section>
+
+    <article class="content-main" id="dynamicContent"></article>
+</div>
+
+<script>
+    const units = [
+        // SI & Metric
+        { name: "kilogram/cubic meter [kg/m³]", factor: 1 },
+        { name: "gram/cubic centimeter [g/cm³]", factor: 1000 },
+        { name: "kilogram/cubic centimeter", factor: 1000000 },
+        { name: "gram/cubic millimeter [g/mm³]", factor: 1000000 },
+        { name: "milligram/cubic meter", factor: 0.000001 },
+        { name: "milligram/cubic centimeter", factor: 1 },
+        { name: "milligram/cubic millimeter", factor: 1000 },
+        { name: "exagram/liter [Eg/L]", factor: 1e+21 },
+        { name: "petagram/liter [Pg/L]", factor: 1e+18 },
+        { name: "teragram/liter [Tg/L]", factor: 1e+15 },
+        { name: "gigagram/liter [Gg/L]", factor: 1e+12 },
+        { name: "megagram/liter [Mg/L]", factor: 1e+9 },
+        { name: "kilogram/liter [kg/L]", factor: 1000 },
+        { name: "hectogram/liter [hg/L]", factor: 100 },
+        { name: "dekagram/liter [dag/L]", factor: 10 },
+        { name: "gram/liter [g/L]", factor: 1 },
+        { name: "decigram/liter [dg/L]", factor: 0.1 },
+        { name: "centigram/liter [cg/L]", factor: 0.01 },
+        { name: "milligram/liter [mg/L]", factor: 0.001 },
+        { name: "microgram/liter [µg/L]", factor: 1e-6 },
+        { name: "nanogram/liter [ng/L]", factor: 1e-9 },
+        { name: "picogram/liter [pg/L]", factor: 1e-12 },
+        { name: "femtogram/liter [fg/L]", factor: 1e-15 },
+        { name: "attogram/liter [ag/L]", factor: 1e-18 },
+        // Imperial / US
+        { name: "pound/cubic inch [lb/in³]", factor: 27679.9 },
+        { name: "pound/cubic foot [lb/ft³]", factor: 16.01846 },
+        { name: "pound/cubic yard [lb/yd³]", factor: 0.593276 },
+        { name: "pound/gallon (US)", factor: 119.8264 },
+        { name: "pound/gallon (UK)", factor: 143.7895 },
+        { name: "ounce/cubic inch [oz/in³]", factor: 1729.99 },
+        { name: "ounce/cubic foot [oz/ft³]", factor: 1.00115 },
+        { name: "ounce/gallon (US)", factor: 7.48915 },
+        { name: "ounce/gallon (UK)", factor: 8.98681 },
+        { name: "grain/gallon (US)", factor: 0.017118 },
+        { name: "grain/gallon (UK)", factor: 0.020557 },
+        { name: "grain/cubic foot [gr/ft³]", factor: 0.002288 },
+        { name: "ton (short)/cubic yard", factor: 1186.55 },
+        { name: "ton (long)/cubic yard", factor: 1328.94 },
+        { name: "slug/cubic foot [slug/ft³]", factor: 515.3788 },
+        { name: "Earth's density (mean)", factor: 5515 }
+    ];
+
+    const langData = {
+        fr: {
+            title: "Calculateur de Densité",
+            h1: "Histoire et Terminologie",
+            p1: "La densité d'un corps est une notion de physique ancienne. Historiquement, le terme a souvent été utilisé comme synonyme de masse volumique. Cependant, la mesure expérimentale s'appuie sur la <strong>pesée hydrostatique</strong> avec l'eau comme référence.",
+            h2: "Expression de la Densité Relative",
+            p2: "La densité relative (notée $d$) est une grandeur sans dimension. Elle exprime le rapport entre la masse volumique du corps étudié ($\rho_{corps}$) et celle d'un corps de référence ($\rho_{réf}$) :",
+            h3: "Densité des Gaz",
+            p3: "Pour les gaz, la référence est l'air. On utilise la masse molaire ($M$) pour simplifier les calculs :",
+            h4: "Mesure et Héritage d'Archimède",
+            p4: "Archimède a découvert que tout corps plongé dans un fluide subit une poussée vers le haut égale au poids du fluide déplacé. Cela permet de calculer le volume d'objets irréguliers.",
+            thMat: "Matériau", thVal: "Densité relative (d)",
+            cap: "Illustration : La vis coule (d > 1) tandis que le liège flotte (d < 1)."
+        },
+        en: {
+            title: "Density Converter",
+            h1: "History and Terminology",
+            p1: "Density is an ancient concept in physics. Historically, the term was often used as a synonym for mass density. However, experimental measurement relies on <strong>hydrostatic weighing</strong> with water as a reference.",
+            h2: "Relative Density Expression",
+            p2: "Relative density (denoted $d$) is a dimensionless quantity. It expresses the ratio between the density of the studied body ($\rho_{body}$) and that of a reference body ($\rho_{ref}$):",
+            h3: "Gas Density",
+            p3: "For gases, the reference is air. Molar mass ($M$) is commonly used to simplify calculations:",
+            h4: "Measurement and Archimedes' Legacy",
+            p4: "Archimedes discovered that any body immersed in a fluid experiences an upward force equal to the weight of the displaced fluid. This allows for precise volume calculation of irregular objects.",
+            thMat: "Material", thVal: "Relative Density (d)",
+            cap: "Illustration: The screw sinks (d > 1) while the cork floats (d < 1)."
+        }
+    };
+
+    function setLanguage(lang) {
+        const data = langData[lang];
+        document.getElementById('mainTitle').innerText = data.title;
+        document.getElementById('btnFr').classList.toggle('active', lang === 'fr');
+        document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+
+        document.getElementById('dynamicContent').innerHTML = `
+            <h2>${data.h1}</h2><p>${data.p1}</p>
+            <h2>${data.h2}</h2><p>${data.p2}</p>
+            <div class="formula-display">$$d = \\frac{\\rho_{corps}}{\\rho_{réf}}$$</div>
+            <div class="wiki-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/FLdensite3.jpg" alt="Flottabilité">
+                <span class="caption">${data.cap}</span>
+            </div>
+            <h2>${data.h3}</h2><p>${data.p3}</p>
+            <div class="formula-display">$$d_{gaz} \\approx \\frac{M_{gaz}}{29}$$</div>
+            <h2>${data.h4}</h2><p>${data.p4}</p>
+            <table>
+                <thead><tr><th>${data.thMat}</th><th>${data.thVal}</th></tr></thead>
+                <tbody>
+                    <tr><td>Gold / Or</td><td>19.3</td></tr>
+                    <tr><td>Lead / Plomb</td><td>11.35</td></tr>
+                    <tr><td>Water / Eau</td><td>1.00</td></tr>
+                </tbody>
+            </table>
+        `;
+        MathJax.typeset();
+    }
+
+    const selFrom = document.getElementById('uFrom'), selTo = document.getElementById('uTo');
+    const valFrom = document.getElementById('valFrom'), valTo = document.getElementById('valTo');
+
+    units.forEach(u => {
+        selFrom.options.add(new Option(u.name, u.factor));
+        selTo.options.add(new Option(u.name, u.factor));
+    });
+
+    selFrom.selectedIndex = 1; selTo.selectedIndex = 0;
+
+    function convert() {
+        if (!valFrom.value) { valTo.value = ""; return; }
+        const res = (parseFloat(valFrom.value) * parseFloat(selFrom.value)) / parseFloat(selTo.value);
+        valTo.value = Number(res.toPrecision(10));
+    }
+
+    document.getElementById('swapBtn').onclick = () => {
+        const temp = selFrom.selectedIndex; selFrom.selectedIndex = selTo.selectedIndex;
+        selTo.selectedIndex = temp; convert();
+    };
+
+    valFrom.oninput = convert; selFrom.onchange = convert; selTo.onchange = convert;
+    
+    setLanguage('fr');
+    convert();
+</script>
+</body>
+</html>
