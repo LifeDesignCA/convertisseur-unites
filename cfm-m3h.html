@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Convertir CFM en m³/h — Débit d'air (Précision Ingénierie)</title>
+    <meta name="description" content="Convertisseur CFM en m³/h GRATUIT. 1 CFM = 1,69901 m³/h. Idéal pour ventilation, CVAC (HVAC) et calculs de débit d'air industriels.">
+    <link rel="canonical" href="https://lifedesignca.github.io/convertisseur-unites/cfm-m3h.html">
+
+    <style>
+        :root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2)}
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:system-ui;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+        .container{max-width:1000px;margin:auto;padding:20px}
+        .lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+        .lang-btn{padding:10px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all 0.3s}
+        .lang-btn.active{background:var(--primary);color:white;transform:scale(1.05)}
+        .hero{text-align:center;margin:80px 20px 40px;padding:48px 24px;background:rgba(255,255,255,0.05);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4)}
+        h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:0 0 16px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+        .hero-subtitle{font-size:1.25rem;color:var(--muted);max-width:700px;margin:0 auto;line-height:1.6}
+        .content-section{background:rgba(17,24,39,0.85);border-radius:24px;padding:32px;border:1px solid var(--border);margin:32px 0;backdrop-filter:blur(20px)}
+        .section-title{font-size:1.5rem;margin-bottom:20px;font-weight:700;color:var(--primary)}
+        .converter-main{background:rgba(17,24,39,0.97);border-radius:28px;padding:40px;border:1px solid var(--border);backdrop-filter:blur(25px);box-shadow:0 35px 70px rgba(0,0,0,0.5);margin:40px 0}
+        .converter-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+        .precision-group{display:flex;gap:8px;align-items:center;font-size:0.9rem}
+        .precision-select{padding:8px 12px;background:rgba(55,65,81,0.8);border:1px solid var(--border);border-radius:12px;color:var(--text)}
+        .units-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin:32px 0}
+        .unit-card{background:rgba(31,41,55,0.8);border-radius:20px;padding:20px;border:1px solid var(--border);transition:all 0.3s;text-align:center}
+        .unit-label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:12px;font-weight:600}
+        .value-input{width:100%;padding:16px 12px;background:rgba(15,23,42,0.95);border:2px solid transparent;border-radius:16px;color:var(--text);font-size:2rem;font-weight:900;text-align:center;font-family:monospace}
+        .swap-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#059669);border:3px solid rgba(255,255,255,0.3);color:white;font-size:1.4rem;cursor:pointer;transition:all 0.3s}
+        .result-display{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05));border-radius:16px;padding:20px;margin:20px 0;border:2px solid rgba(16,185,129,0.3);text-align:center}
+        .result-big{font-size:2.2rem;font-weight:900;color:var(--primary);font-family:monospace}
+        .examples-table{width:100%;border-collapse:collapse;background:rgba(31,41,55,0.6);border-radius:16px;overflow:hidden;margin:24px 0}
+        .examples-table th{padding:16px 20px;background:var(--primary);color:white;text-align:left}
+        .examples-table td{padding:16px 20px;border-bottom:1px solid var(--border)}
+        
+        [data-lang-text]{display:none}
+        body[data-lang="fr"] [data-lang-text="fr"]{display:block}
+        body[data-lang="en"] [data-lang-text="en"]{display:block}
+
+        @media(max-width:768px){.units-grid{grid-template-columns:1fr; gap:10px;}}
+    </style>
+</head>
+<body data-lang="fr">
+    <div class="lang-switch">
+        <button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
+        <button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1 data-lang-text="fr">Convertir CFM en m³/h</h1>
+            <h1 data-lang-text="en">Convert CFM to m³/h</h1>
+            <p class="hero-subtitle" data-lang-text="fr">Débit d'air précis pour ingénieurs et techniciens industriels.</p>
+            <p class="hero-subtitle" data-lang-text="en">Accurate air flow for engineers and industrial technicians.</p>
+        </div>
+
+        <div class="converter-main">
+            <div class="converter-header">
+                <h2 class="converter-title" data-lang-text="fr">Débit volumique</h2>
+                <h2 class="converter-title" data-lang-text="en">Volume flow rate</h2>
+                <div class="precision-group">
+                    <span data-lang-text="fr">Précision :</span>
+                    <span data-lang-text="en">Precision :</span>
+                    <select id="precision" class="precision-select">
+                        <option value="auto">Auto</option>
+                        <option value="2">2 déc.</option>
+                        <option value="5">5 déc.</option>
+                        <option value="10">10 déc.</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="units-grid">
+                <div class="unit-card">
+                    <div class="unit-label" id="labelFrom">DE: CFM</div>
+                    <input id="inputFrom" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+                <button class="swap-btn" id="swapBtn">↔</button>
+                <div class="unit-card">
+                    <div class="unit-label" id="labelTo">À: m³/h</div>
+                    <input id="inputTo" class="value-input" type="number" step="any" placeholder="0">
+                </div>
+            </div>
+
+            <div class="result-display" id="resultDisplay" style="display:none">
+                <div class="result-big" id="resultBig"></div>
+            </div>
+        </div>
+
+        <div class="content-section" data-lang-text="fr">
+            <h3 class="section-title">Plus d'informations sur le convertisseur d'unités</h3>
+            <p><strong>Combien de CFM y a-t-il dans 1 mètre cube/heure ?</strong> La réponse est <strong>0,58857777021102</strong>. Nous supposons que vous effectuez une conversion entre le pied cube/minute (cfm) et le mètre cube/heure. Vous pouvez consulter plus de détails sur chaque unité de mesure : cfm ou mètre cube/heure. L'unité dérivée du SI pour le débit volumique est le mètre cube/seconde. 1 mètre cube/seconde est égal à 2118,8799727597 cfm, ou 3600 mètres cubes/heure. Notez que des erreurs d'arrondi peuvent se produire, donc vérifiez toujours les résultats. Utilisez cette page pour apprendre à convertir entre les pieds cubes/minute et les mètres cubes/heure. Tapez vos propres chiffres dans le formulaire pour convertir les unités !</p>
+
+            <h3 class="section-title" style="margin-top:40px">Tableau de conversion rapide de CFM en m³/h</h3>
+            <table class="examples-table">
+                <thead>
+                    <tr><th>CFM vers m³/h</th><th>Résultat</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1 cfm en mètre cube/heure</td><td>1.69901 m³/h</td></tr>
+                    <tr><td>5 cfm en mètre cube/heure</td><td>8.49505 m³/h</td></tr>
+                    <tr><td>10 cfm en mètre cube/heure</td><td>16.99011 m³/h</td></tr>
+                    <tr><td>20 cfm en mètre cube/heure</td><td>33.98022 m³/h</td></tr>
+                    <tr><td>50 cfm en mètre cube/heure</td><td>84.95054 m³/h</td></tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-title">Conversions courantes de débit volumique</h3>
+            <ul style="list-style:none; display:grid; grid-template-columns: 1fr 1fr; gap:10px; color:var(--primary);">
+                <li>cfm en kilomètre cube/seconde</li>
+                <li>cfm en millimètre cube/heure</li>
+                <li>cfm en billion de pieds cubes/heure</li>
+                <li>cfm en lambda/heure</li>
+                <li>cfm en hectare-mètre/heure</li>
+                <li>cfm en hectolitre/seconde</li>
+                <li>cfm en kilolitre/seconde</li>
+            </ul>
+
+            <h3 class="section-title" style="margin-top:40px">Définition : Pied cube/minute (CFM)</h3>
+            <p>Le pied cube par minute (CFM) est une mesure utilisée en hygiène industrielle et en ingénierie de la ventilation. Il décrit le débit d'un volume de gaz ou d'air entrant ou sortant d'un espace.</p>
+            <p style="margin-top:10px">Une mesure standard du débit d'air qui indique combien de pieds cubes d'air passent par un point fixe en une minute. Plus le chiffre est élevé, plus l'air est forcé à travers le système. 1 CFM équivaut à environ 0,47 litre par seconde.</p>
+        </div>
+
+        <div class="content-section" data-lang-text="en">
+            <h3 class="section-title">More information from the unit converter</h3>
+            <p>How many cfm in 1 cubic metre/hour? The answer is <strong>0.58857777021102</strong>. We assume you are converting between cubic foot/minute and cubic metre/hour. You can view more details on each measurement unit: cfm or cubic metre/hour. The SI derived unit for volume flow rate is the cubic meter/second. 1 cubic meter/second is equal to 2118.8799727597 cfm, or 3600 cubic metre/hour. Note that rounding errors may occur, so always check the results. Use this page to learn how to convert between cubic feet/minute and cubic meters/hour. Type in your own numbers in the form to convert the units!</p>
+
+            <h3 class="section-title" style="margin-top:40px">Quick conversion chart of cfm to cubic metre/hour</h3>
+            <table class="examples-table">
+                <thead>
+                    <tr><th>cfm to cubic metre/hour</th><th>Result</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1 cfm to cubic metre/hour</td><td>1.69901 cubic metre/hour</td></tr>
+                    <tr><td>5 cfm to cubic metre/hour</td><td>8.49505 cubic metre/hour</td></tr>
+                    <tr><td>10 cfm to cubic metre/hour</td><td>16.99011 cubic metre/hour</td></tr>
+                    <tr><td>20 cfm to cubic metre/hour</td><td>33.98022 cubic metre/hour</td></tr>
+                    <tr><td>50 cfm to cubic metre/hour</td><td>84.95054 cubic metre/hour</td></tr>
+                </tbody>
+            </table>
+
+            <h3 class="section-title">Common volume flow rate conversions</h3>
+            <ul style="list-style:none; display:grid; grid-template-columns: 1fr 1fr; gap:10px; color:var(--primary);">
+                <li>cfm to cubic kilometer/second</li>
+                <li>cfm to trillion cubic foot/hour</li>
+                <li>cfm to lambda/hour</li>
+                <li>cfm to hectare meter/hour</li>
+                <li>cfm to hectoliter/second</li>
+            </ul>
+
+            <h3 class="section-title" style="margin-top:40px">Definition: Cubic foot/minute</h3>
+            <p>Cubic feet per minute (CFM) is a measure used in Industrial hygiene and ventilation engineering. It describes the rate of flow of a gas or air volume into or out of a space.</p>
+        </div>
+    </div>
+
+    <script>
+        const FACTOR = 1.69901082;
+        let isSwapped = false;
+
+        function updateLabels() {
+            const lFrom = document.getElementById('labelFrom'), lTo = document.getElementById('labelTo');
+            const lang = document.body.dataset.lang;
+            if (!isSwapped) {
+                lFrom.textContent = (lang === "fr" ? "DE: " : "FROM: ") + "CFM";
+                lTo.textContent = (lang === "fr" ? "À: " : "TO: ") + "m³/h";
+            } else {
+                lFrom.textContent = (lang === "fr" ? "DE: " : "FROM: ") + "m³/h";
+                lTo.textContent = (lang === "fr" ? "À: " : "TO: ") + "CFM";
+            }
+        }
+
+        function formatNumber(num) {
+            const prec = document.getElementById('precision').value;
+            return prec === 'auto' ? parseFloat(num.toFixed(10)) : parseFloat(num.toFixed(parseInt(prec)));
+        }
+
+        function convert(source) {
+            const valFrom = document.getElementById('inputFrom'), valTo = document.getElementById('inputTo');
+            const resDisp = document.getElementById('resultDisplay'), resBig = document.getElementById('resultBig');
+            if (source === 'from') {
+                const val = parseFloat(valFrom.value) || 0;
+                valTo.value = valFrom.value ? formatNumber(isSwapped ? val / FACTOR : val * FACTOR) : '';
+            } else {
+                const val = parseFloat(valTo.value) || 0;
+                valFrom.value = valTo.value ? formatNumber(isSwapped ? val * FACTOR : val / FACTOR) : '';
+            }
+            if (valFrom.value || valTo.value) {
+                resDisp.style.display = 'block';
+                resBig.textContent = valFrom.value + (isSwapped ? " m³/h" : " CFM") + " = " + valTo.value + (isSwapped ? " CFM" : " m³/h");
+            } else resDisp.style.display = 'none';
+        }
+
+        document.getElementById('inputFrom').oninput = () => convert('from');
+        document.getElementById('inputTo').oninput = () => convert('to');
+        document.getElementById('precision').onchange = () => convert('from');
+        document.getElementById('swapBtn').onclick = () => { 
+            isSwapped = !isSwapped; 
+            const f = document.getElementById('inputFrom'), t = document.getElementById('inputTo'), v = f.value;
+            f.value = t.value; t.value = v;
+            updateLabels(); convert('from'); 
+        };
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.body.dataset.lang = btn.dataset.setLang;
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                updateLabels();
+                if(document.getElementById('inputFrom').value) convert('from');
+            };
+        });
+        updateLabels();
+    </script>
+</body>
+</html>
