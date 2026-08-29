@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convertisseur de Vitesse — m/s, km/h, mph, nœuds</title>
+<meta name="description" content="Convertisseur de vitesse GRATUIT : mètre/seconde (m/s), km/h, mph, nœuds, pied/seconde. Précis pour l'ingénierie, le transport, l'aviation et la navigation.">
+<link rel="canonical" href="https://lifedesignca.github.io/convertisseur-unites/vitesse.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:site_name" content="Convertisseurs en ligne gratuits">
+    <meta property="og:title" content="Convertisseur de Vitesse — m/s, km/h, mph, nœuds">
+    <meta property="og:description" content="Convertisseur de vitesse GRATUIT : mètre/seconde (m/s), km/h, mph, nœuds, pied/seconde. Précis pour l'ingénierie, le transport, l'aviation et la navigation.">
+    <meta property="og:url" content="https://lifedesignca.github.io/convertisseur-unites/vitesse.html">
+    <meta property="og:image" content="https://lifedesignca.github.io/convertisseur-unites/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convertisseur de Vitesse — m/s, km/h, mph, nœuds">
+    <meta name="twitter:description" content="Convertisseur de vitesse GRATUIT : mètre/seconde (m/s), km/h, mph, nœuds, pied/seconde. Précis pour l'ingénierie, le transport, l'aviation et la navigation.">
+    <meta name="twitter:image" content="https://lifedesignca.github.io/convertisseur-unites/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertisseur de Vitesse", "url": "https://lifedesignca.github.io/convertisseur-unites/vitesse.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Convertisseur de vitesse GRATUIT : mètre/seconde (m/s), km/h, mph, nœuds, pied/seconde. Précis pour l'ingénierie, le transport, l'aviation et la navigation.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["fr", "en"]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lifedesignca.github.io/convertisseur-unites/"}, {"@type": "ListItem", "position": 2, "name": "Convertisseur de Vitesse", "item": "https://lifedesignca.github.io/convertisseur-unites/vitesse.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment convertir km/h en mph ?", "acceptedAnswer": {"@type": "Answer", "text": "Multipliez la valeur en km/h par 0,621371 pour obtenir des mph. Par exemple, 100 km/h ≈ 62,14 mph."}}, {"@type": "Question", "name": "Qu'est-ce qu'un nœud ?", "acceptedAnswer": {"@type": "Answer", "text": "Un nœud correspond à un mille marin par heure, soit 1,852 km/h. Il est utilisé en navigation maritime et en aviation."}}]}</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9QLMJ0NXW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W9QLMJ0NXW');
+</script>
+<style>
+:root{--primary:#10b981;--bg:#0f0f23;--card:#111827;--text:#f9fafb;--muted:#9ca3af;--border:rgba(148,163,184,0.2)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:linear-gradient(135deg,#1e1b4b 0%,#0f0f23 50%);color:var(--text);line-height:1.7;min-height:100vh}
+.container{max-width:1000px;margin:auto;padding:20px}
+.lang-switch{position:fixed;top:20px;right:20px;z-index:100;display:flex;gap:8px}
+.lang-btn{padding:10px 20px;border:2px solid var(--primary);background:transparent;color:var(--text);border-radius:25px;cursor:pointer;font-weight:600;transition:all .3s}
+.lang-btn.active{background:var(--primary);color:#fff;transform:scale(1.05)}
+.hero{text-align:center;margin:40px 20px 40px;padding:48px 24px;background:rgba(255,255,255,.05);border-radius:24px;backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+h1{font-size:clamp(2.2rem,6vw,3.5rem);margin:0 0 16px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800}
+.hero-subtitle{font-size:1.25rem;color:var(--muted);max-width:700px;margin:0 auto;line-height:1.6}
+.converter-main{background:rgba(17,24,39,.97);border-radius:28px;padding:40px;border:1px solid var(--border);backdrop-filter:blur(25px);box-shadow:0 35px 70px rgba(0,0,0,.5);margin:40px 0}
+.converter-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:16px}
+.converter-title{font-size:1.6rem;font-weight:800}
+.units-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;margin:32px 0}
+.unit-card{background:rgba(31,41,55,.8);border-radius:20px;padding:20px;border:1px solid var(--border);transition:all .3s;text-align:center}
+.unit-card:hover{border-color:var(--primary);box-shadow:0 0 0 4px rgba(16,185,129,.15)}
+.unit-label{font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:12px;font-weight:600}
+.unit-select{width:100%;padding:8px;margin-bottom:10px;background:rgba(55,65,81,.8);border:1px solid var(--border);border-radius:12px;color:var(--text);font-weight:600;text-align:center}
+.value-input{width:100%;padding:16px 12px;background:rgba(15,23,42,.95);border:2px solid transparent;border-radius:16px;color:var(--text);font-size:2rem;font-weight:900;text-align:center;font-family:monospace}
+.swap-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),#059669);border:3px solid rgba(255,255,255,.3);color:#fff;font-size:1.4rem;cursor:pointer;transition:all .3s}
+.swap-btn:hover{transform:scale(1.1);box-shadow:0 0 20px rgba(16,185,129,.4)}
+.result-display{background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(16,185,129,.05));border-radius:16px;padding:20px;margin:20px 0;border:2px solid rgba(16,185,129,.3);text-align:center}
+.result-big{font-size:2rem;font-weight:900;color:var(--primary);font-family:monospace;word-break:break-word}
+.table-wrap{overflow-x:auto}
+table.convtable{width:100%;border-collapse:collapse;margin-top:10px}
+table.convtable th,table.convtable td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border)}
+table.convtable th{color:var(--primary);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+table.convtable td.val{font-family:monospace;font-weight:700}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0}
+.content-card{background:rgba(17,24,39,.85);border-radius:24px;padding:32px;border:1px solid var(--border)}
+.content-title{font-size:1.3rem;margin-bottom:16px;font-weight:700;color:var(--primary)}
+.formula-box{background:rgba(31,41,55,.8);padding:20px;border-radius:16px;border-left:5px solid var(--primary);font-family:monospace}
+.faq-item{margin-bottom:16px}
+.faq-item strong{display:block;margin-bottom:4px}
+
+.site-nav{position:fixed;top:20px;left:20px;z-index:100}
+.site-nav a{display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,0.08);border:2px solid var(--primary);color:var(--text);border-radius:30px;text-decoration:none;font-weight:700}
+.breadcrumb{max-width:1000px;margin:90px auto 0;padding:0 20px;font-size:0.85rem;color:var(--muted)}
+.breadcrumb a{color:var(--primary);text-decoration:none}
+.related-links{max-width:1000px;margin:20px auto 40px;padding:24px;background:rgba(17,24,39,0.85);border:1px solid var(--border);border-radius:20px;text-align:center}
+.related-links h3{font-size:1rem;margin-bottom:14px;color:var(--muted);font-weight:600}
+.related-links .links-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.related-links a{padding:8px 16px;background:rgba(16,185,129,0.12);color:var(--primary);border-radius:20px;text-decoration:none;font-size:0.9rem;font-weight:600;border:1px solid rgba(16,185,129,0.3)}
+.related-links a:hover{background:rgba(16,185,129,0.25)}
+@media(max-width:700px){.site-nav{top:12px;left:12px}.site-nav a{padding:8px 14px;font-size:0.9rem}}
+
+[data-lang-text]{display:none}
+body[data-lang="fr"] [data-lang-text="fr"]{display:block}
+body[data-lang="en"] [data-lang-text="en"]{display:block}
+.breadcrumb [data-lang-text]{display:none}
+body[data-lang="fr"] .breadcrumb [data-lang-text="fr"]{display:inline}
+body[data-lang="en"] .breadcrumb [data-lang-text="en"]{display:inline}
+@media(max-width:768px){.units-grid{grid-template-columns:1fr}.content-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-lang="fr">
+<div class="site-nav"><a href="index.html">🔧 <span data-lang-text="fr">Accueil</span><span data-lang-text="en">Home</span></a></div>
+<nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="index.html" data-lang-text="fr">Accueil</a><a href="index.html" data-lang-text="en">Home</a>
+    <span> / </span>
+    <span data-lang-text="fr">Convertisseur de Vitesse</span><span data-lang-text="en">Speed Converter</span>
+</nav>
+
+<div class="lang-switch">
+    <button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
+    <button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
+</div>
+
+<div class="container">
+    <div class="hero">
+        <h1 data-lang-text="fr">Convertisseur de Vitesse</h1>
+        <h1 data-lang-text="en">Speed Converter</h1>
+        <p class="hero-subtitle" data-lang-text="fr">Convertissez entre m/s, km/h, mph, nœuds et ft/s. Utile en ingénierie, transport, aviation et navigation.</p>
+        <p class="hero-subtitle" data-lang-text="en">Convert between m/s, km/h, mph, knots and ft/s. Useful for engineering, transportation, aviation and navigation.</p>
+    </div>
+
+    <div class="converter-main">
+        <div class="converter-header">
+            <h2 class="converter-title" data-lang-text="fr">Vitesse</h2>
+            <h2 class="converter-title" data-lang-text="en">Speed</h2>
+        </div>
+
+        <div class="units-grid">
+            <div class="unit-card">
+                <div class="unit-label" data-lang-text="fr">DE</div>
+                <div class="unit-label" data-lang-text="en">FROM</div>
+                <select id="uFrom" class="unit-select"></select>
+                <input id="inputFrom" class="value-input" type="number" step="any" value="1">
+            </div>
+
+            <button class="swap-btn" id="swapBtn" aria-label="swap" type="button">↔</button>
+
+            <div class="unit-card">
+                <div class="unit-label" data-lang-text="fr">VERS</div>
+                <div class="unit-label" data-lang-text="en">TO</div>
+                <select id="uTo" class="unit-select"></select>
+                <input id="inputTo" class="value-input" type="number" step="any" readonly>
+            </div>
+        </div>
+
+        <div class="result-display" id="resultDisplay">
+            <div class="result-big" id="resultBig"></div>
+        </div>
+
+        <div class="table-wrap">
+            <table class="convtable">
+                <thead>
+                    <tr>
+                        <th data-lang-text="fr">Unité</th><th data-lang-text="en">Unit</th>
+                        <th data-lang-text="fr">Valeur</th><th data-lang-text="en">Value</th>
+                    </tr>
+                </thead>
+                <tbody id="convBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <div class="content-card">
+            <h3 class="content-title" data-lang-text="fr">Formule</h3>
+            <h3 class="content-title" data-lang-text="en">Formula</h3>
+            <div class="formula-box">
+                <div data-lang-text="fr"><strong>1 m/s = 3,6 km/h = 2,23694 mph = 1,94384 nœuds</strong></div>
+                <div data-lang-text="en"><strong>1 m/s = 3.6 km/h = 2.23694 mph = 1.94384 knots</strong></div>
+            </div>
+        </div>
+        <div class="content-card">
+            <h3 class="content-title">FAQ</h3>
+            <div class="faq-item"><strong data-lang-text="fr">Comment convertir km/h en mph ?</strong><span data-lang-text="fr">Multipliez la valeur en km/h par 0,621371 pour obtenir des mph. Par exemple, 100 km/h ≈ 62,14 mph.</span><strong data-lang-text="en">How do you convert km/h to mph?</strong><span data-lang-text="en">Multiply the km/h value by 0.621371 to get mph. For example, 100 km/h ≈ 62.14 mph.</span></div>
+            <div class="faq-item"><strong data-lang-text="fr">Qu'est-ce qu'un nœud ?</strong><span data-lang-text="fr">Un nœud correspond à un mille marin par heure, soit 1,852 km/h. Il est utilisé en navigation maritime et en aviation.</span><strong data-lang-text="en">What is a knot?</strong><span data-lang-text="en">A knot equals one nautical mile per hour, or 1.852 km/h. It is used in maritime navigation and aviation.</span></div>
+        </div>
+    </div>
+
+    <div class="related-links">
+    <h3><span data-lang-text="fr">Voir aussi</span><span data-lang-text="en">See also</span></h3>
+    <div class="links-row"><a href="semaine-heure.html"><span data-lang-text="fr">⏰ Semaines ↔ Heures</span><span data-lang-text="en">⏰ Weeks ↔ Hours</span></a>
+        <a href="kg-lbs.html"><span data-lang-text="fr">⚖️ Kilogrammes ↔ Livres</span><span data-lang-text="en">⚖️ Kilograms ↔ Pounds</span></a>
+        <a href="km-miles.html"><span data-lang-text="fr">🗺️ Kilomètres ↔ Milles</span><span data-lang-text="en">🗺️ Kilometers ↔ Miles</span></a>
+        <a href="celsius-fahrenheit.html"><span data-lang-text="fr">🌡️ Celsius ↔ Fahrenheit</span><span data-lang-text="en">🌡️ Celsius ↔ Fahrenheit</span></a>
+        <a href="litres-gallons.html"><span data-lang-text="fr">🛢️ Litres ↔ Gallons</span><span data-lang-text="en">🛢️ Liters ↔ Gallons</span></a>
+        <a href="watts-hp.html"><span data-lang-text="fr">⚡ Watts ↔ Chevaux (HP)</span><span data-lang-text="en">⚡ Watts ↔ Horsepower</span></a></div>
+</div>
+
+    <footer class="footer" style="max-width:1000px;margin:0 auto 40px;text-align:center;padding:24px;color:var(--muted)">
+    <p data-lang-text="fr">© 2026 Convertisseurs en ligne gratuits • Sans inscription</p>
+    <p data-lang-text="en">© 2026 Free Online Converters • No signup</p>
+</footer>
+
+</div>
+
+<script>
+const UNITS = [{"key": "ms", "label": "Mètre/seconde (m/s)", "sym": "m/s", "factor": 1}, {"key": "kmh", "label": "Kilomètre/heure (km/h)", "sym": "km/h", "factor": 0.2777777778}, {"key": "mph", "label": "Mile/heure (mph)", "sym": "mph", "factor": 0.44704}, {"key": "kn", "label": "Nœud (kn)", "sym": "kn", "factor": 0.5144444444}, {"key": "fts", "label": "Pied/seconde (ft/s)", "sym": "ft/s", "factor": 0.3048}];
+let uFromSel, uToSel;
+
+function buildSelects(){
+    uFromSel = document.getElementById('uFrom');
+    uToSel = document.getElementById('uTo');
+    UNITS.forEach((u,i)=>{
+        uFromSel.appendChild(new Option(u.label, i));
+        uToSel.appendChild(new Option(u.label, i));
+    });
+    uFromSel.selectedIndex = 1;
+    uToSel.selectedIndex = 2;
+}
+
+function fmt(n){
+    if(!isFinite(n)) return '';
+    if(Math.abs(n) >= 1e9 || (Math.abs(n) < 1e-6 && n !== 0)) return n.toExponential(4);
+    let r = Math.round(n*1e6)/1e6;
+    return parseFloat(r.toFixed(6)).toString();
+}
+
+function convert(){
+    const from = UNITS[uFromSel.value];
+    const to = UNITS[uToSel.value];
+    const val = parseFloat(document.getElementById('inputFrom').value);
+    const out = document.getElementById('inputTo');
+    const resBig = document.getElementById('resultBig');
+    if(isNaN(val)){
+        out.value = '';
+        resBig.textContent = '';
+    } else {
+        const base = val * from.factor;
+        const res = base / to.factor;
+        out.value = fmt(res);
+        resBig.textContent = val + ' ' + from.sym + ' = ' + fmt(res) + ' ' + to.sym;
+    }
+    renderTable(isNaN(val) ? 0 : val, from);
+}
+
+function renderTable(val, from){
+    const body = document.getElementById('convBody');
+    body.innerHTML = '';
+    const base = val * from.factor;
+    UNITS.forEach(u=>{
+        const tr = document.createElement('tr');
+        const res = base / u.factor;
+        tr.innerHTML = '<td>'+u.label+'</td><td class="val">'+fmt(res)+' '+u.sym+'</td>';
+        body.appendChild(tr);
+    });
+}
+
+document.getElementById('inputFrom').oninput = convert;
+document.getElementById('uFrom').onchange = convert;
+document.getElementById('uTo').onchange = convert;
+document.getElementById('swapBtn').onclick = ()=>{
+    const tmp = uFromSel.selectedIndex;
+    uFromSel.selectedIndex = uToSel.selectedIndex;
+    uToSel.selectedIndex = tmp;
+    convert();
+};
+
+document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.onclick = ()=>{
+        document.body.dataset.lang = b.dataset.setLang;
+        document.querySelectorAll('.lang-btn').forEach(x=>x.classList.remove('active'));
+        b.classList.add('active');
+    };
+});
+
+buildSelects();
+convert();
+</script>
+</body>
+</html>

@@ -41,9 +41,41 @@
         body[data-lang="en"] [data-lang-text="en"]{display:block}
 
         @media(max-width:768px){.units-grid{grid-template-columns:1fr;}.content-grid{grid-template-columns:1fr;}}
-    </style>
+    
+.site-nav{position:fixed;top:20px;left:20px;z-index:100}
+.site-nav a{display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,0.08);border:2px solid var(--primary);color:var(--text);border-radius:30px;text-decoration:none;font-weight:700}
+.breadcrumb{max-width:1000px;margin:90px auto 0;padding:0 20px;font-size:0.85rem;color:var(--muted)}
+.breadcrumb a{color:var(--primary);text-decoration:none}
+.related-links{max-width:1000px;margin:20px auto 40px;padding:24px;background:rgba(17,24,39,0.85);border:1px solid var(--border);border-radius:20px;text-align:center}
+.related-links h3{font-size:1rem;margin-bottom:14px;color:var(--muted);font-weight:600}
+.related-links .links-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.related-links a{padding:8px 16px;background:rgba(16,185,129,0.12);color:var(--primary);border-radius:20px;text-decoration:none;font-size:0.9rem;font-weight:600;border:1px solid rgba(16,185,129,0.3)}
+.related-links a:hover{background:rgba(16,185,129,0.25)}
+.breadcrumb [data-lang-text]{display:none}
+body[data-lang="fr"] .breadcrumb [data-lang-text="fr"]{display:inline}
+body[data-lang="en"] .breadcrumb [data-lang-text="en"]{display:inline}
+@media(max-width:700px){.site-nav{top:12px;left:12px}.site-nav a{padding:8px 14px;font-size:0.9rem}}
+</style>
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:site_name" content="Convertisseurs en ligne gratuits">
+    <meta property="og:title" content="Convertir Celsius en Fahrenheit — (°C en °F) Précision Exacte">
+    <meta property="og:description" content="Convertisseur Celsius en Fahrenheit GRATUIT. Formule exacte, points de repère et explications détaillées. Idéal pour la cuisine, la météo et la science.">
+    <meta property="og:url" content="https://lifedesignca.github.io/convertisseur-unites/celsius-fahrenheit.html">
+    <meta property="og:image" content="https://lifedesignca.github.io/convertisseur-unites/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convertir Celsius en Fahrenheit — (°C en °F) Précision Exacte">
+    <meta name="twitter:description" content="Convertisseur Celsius en Fahrenheit GRATUIT. Formule exacte, points de repère et explications détaillées. Idéal pour la cuisine, la météo et la science.">
+    <meta name="twitter:image" content="https://lifedesignca.github.io/convertisseur-unites/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertir Celsius en Fahrenheit — (°C en °F) Précision Exacte", "url": "https://lifedesignca.github.io/convertisseur-unites/celsius-fahrenheit.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Convertisseur Celsius en Fahrenheit GRATUIT. Formule exacte, points de repère et explications détaillées. Idéal pour la cuisine, la météo et la science.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["fr", "en"]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lifedesignca.github.io/convertisseur-unites/"}, {"@type": "ListItem", "position": 2, "name": "Convertir Celsius en Fahrenheit — (°C en °F) Précision Exacte", "item": "https://lifedesignca.github.io/convertisseur-unites/celsius-fahrenheit.html"}]}</script>
 </head>
 <body data-lang="fr">
+<div class="site-nav"><a href="index.html">🔧 <span data-lang-text="fr">Accueil</span><span data-lang-text="en">Home</span></a></div>
+<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html" data-lang-text="fr">Accueil</a><a href="index.html" data-lang-text="en">Home</a><span> / </span><span data-lang-text="fr">Celsius ↔ Fahrenheit</span><span data-lang-text="en">Celsius ↔ Fahrenheit</span></nav>
+
     <div class="lang-switch">
         <button class="lang-btn active" data-set-lang="fr">🇫🇷 FR</button>
         <button class="lang-btn" data-set-lang="en">🇬🇧 EN</button>
@@ -219,5 +251,11 @@
 
         updateLabels();
     </script>
+<div class="related-links"><h3><span data-lang-text="fr">Voir aussi</span><span data-lang-text="en">See also</span></h3><div class="links-row"><a href="semaine-heure.html"><span data-lang-text="fr">⏰ Semaines ↔ Heures</span><span data-lang-text="en">⏰ Weeks ↔ Hours</span></a>
+<a href="kg-lbs.html"><span data-lang-text="fr">⚖️ Kilogrammes ↔ Livres</span><span data-lang-text="en">⚖️ Kilograms ↔ Pounds</span></a>
+<a href="km-miles.html"><span data-lang-text="fr">🗺️ Kilomètres ↔ Milles</span><span data-lang-text="en">🗺️ Kilometers ↔ Miles</span></a>
+<a href="litres-gallons.html"><span data-lang-text="fr">🛢️ Litres ↔ Gallons</span><span data-lang-text="en">🛢️ Liters ↔ Gallons</span></a>
+<a href="watts-hp.html"><span data-lang-text="fr">⚡ Watts ↔ Chevaux (HP)</span><span data-lang-text="en">⚡ Watts ↔ Horsepower</span></a>
+<a href="density.html"><span data-lang-text="fr">🧪 Densité relative</span><span data-lang-text="en">🧪 Relative Density</span></a></div></div>
 </body>
 </html>

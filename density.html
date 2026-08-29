@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Density Converter | Convertisseur de Densité</title>
+    <title>Convertisseur de Densité — kg/m³, g/cm³, lb/ft³ | Density Converter</title>
     
     <script>
     window.MathJax = {
@@ -43,9 +43,45 @@
         th { background: rgba(16, 185, 129, 0.1); color: var(--primary); }
 
         @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .swap-btn { transform: rotate(90deg); } .header-flex { flex-direction: column; gap: 20px; } }
-    </style>
+    
+:root{--muted:#9ca3af;--border:rgba(148,163,184,0.2);--text:#f9fafb}
+
+.site-nav{position:fixed;top:20px;left:20px;z-index:100}
+.site-nav a{display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(255,255,255,0.08);border:2px solid var(--primary);color:var(--text);border-radius:30px;text-decoration:none;font-weight:700}
+.breadcrumb{max-width:1000px;margin:90px auto 0;padding:0 20px;font-size:0.85rem;color:var(--muted)}
+.breadcrumb a{color:var(--primary);text-decoration:none}
+.related-links{max-width:1000px;margin:20px auto 40px;padding:24px;background:rgba(17,24,39,0.85);border:1px solid var(--border);border-radius:20px;text-align:center}
+.related-links h3{font-size:1rem;margin-bottom:14px;color:var(--muted);font-weight:600}
+.related-links .links-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.related-links a{padding:8px 16px;background:rgba(16,185,129,0.12);color:var(--primary);border-radius:20px;text-decoration:none;font-size:0.9rem;font-weight:600;border:1px solid rgba(16,185,129,0.3)}
+.related-links a:hover{background:rgba(16,185,129,0.25)}
+.breadcrumb [data-lang-text]{display:none}
+body[data-lang="fr"] .breadcrumb [data-lang-text="fr"]{display:inline}
+body[data-lang="en"] .breadcrumb [data-lang-text="en"]{display:inline}
+@media(max-width:700px){.site-nav{top:12px;left:12px}.site-nav a{padding:8px 14px;font-size:0.9rem}}
+</style>
+    <meta name="description" content="Convertisseur de densité et masse volumique GRATUIT : kg/m³, g/cm³, lb/ft³, lb/gal et plus de 30 unités. Outil de physique et chimie pour l'ingénierie.">
+    <link rel="canonical" href="https://lifedesignca.github.io/convertisseur-unites/density.html">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:site_name" content="Convertisseurs en ligne gratuits">
+    <meta property="og:title" content="Convertisseur de Densité — kg/m³, g/cm³, lb/ft³ | Density Converter">
+    <meta property="og:description" content="Convertisseur de densité et masse volumique GRATUIT : kg/m³, g/cm³, lb/ft³, lb/gal et plus de 30 unités. Outil de physique et chimie pour l'ingénierie.">
+    <meta property="og:url" content="https://lifedesignca.github.io/convertisseur-unites/density.html">
+    <meta property="og:image" content="https://lifedesignca.github.io/convertisseur-unites/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Convertisseur de Densité — kg/m³, g/cm³, lb/ft³ | Density Converter">
+    <meta name="twitter:description" content="Convertisseur de densité et masse volumique GRATUIT : kg/m³, g/cm³, lb/ft³, lb/gal et plus de 30 unités. Outil de physique et chimie pour l'ingénierie.">
+    <meta name="twitter:image" content="https://lifedesignca.github.io/convertisseur-unites/og-image.png">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Convertisseur de Densité — kg/m³, g/cm³, lb/ft³ | Density Converter", "url": "https://lifedesignca.github.io/convertisseur-unites/density.html", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "description": "Convertisseur de densité et masse volumique GRATUIT : kg/m³, g/cm³, lb/ft³, lb/gal et plus de 30 unités. Outil de physique et chimie pour l'ingénierie.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "inLanguage": ["fr", "en"]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://lifedesignca.github.io/convertisseur-unites/"}, {"@type": "ListItem", "position": 2, "name": "Convertisseur de Densité — kg/m³, g/cm³, lb/ft³ | Density Converter", "item": "https://lifedesignca.github.io/convertisseur-unites/density.html"}]}</script>
 </head>
 <body>
+<div class="site-nav"><a href="index.html">🔧 Accueil / Home</a></div>
+<nav class="breadcrumb" aria-label="breadcrumb"><a href="index.html">Accueil / Home</a> / Densité relative / Relative Density</nav>
+
 
 <div class="container">
     <div class="header-flex">
@@ -203,5 +239,11 @@
     setLanguage('fr');
     convert();
 </script>
+<div class="related-links"><h3>Voir aussi / See also</h3><div class="links-row"><a href="semaine-heure.html">⏰ Semaines ↔ Heures / Weeks ↔ Hours</a>
+<a href="kg-lbs.html">⚖️ Kilogrammes ↔ Livres / Kilograms ↔ Pounds</a>
+<a href="km-miles.html">🗺️ Kilomètres ↔ Milles / Kilometers ↔ Miles</a>
+<a href="celsius-fahrenheit.html">🌡️ Celsius ↔ Fahrenheit / Celsius ↔ Fahrenheit</a>
+<a href="litres-gallons.html">🛢️ Litres ↔ Gallons / Liters ↔ Gallons</a>
+<a href="watts-hp.html">⚡ Watts ↔ Chevaux (HP) / Watts ↔ Horsepower</a></div></div>
 </body>
 </html>
